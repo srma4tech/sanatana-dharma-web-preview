@@ -1,0 +1,50 @@
+---
+import '../styles/global.css';
+import { withBase } from 'astro:base';
+interface Props {
+  title: string;
+  description: string;
+  lang?: 'en' | 'hi';
+}
+const { title, description, lang = 'en' } = Astro.props;
+const siteName = 'Sanātana Dharma';
+const isHindi = lang === 'hi';
+const isLibraryPage = Astro.url.pathname === '/en/' || Astro.url.pathname === '/hi/';
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#172d27" />
+    <meta name="color-scheme" content="light" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{isHindi ? 'मुख्य सामग्री पर जाएँ' : 'Skip to content'}</a>
+    <header class="site-header">
+      <a class="brand" href={withBase("/")} aria-label={isHindi ? 'सनातन धर्म मुख्य पृष्ठ' : `${siteName} home`}>
+        <span class="brand-mark" aria-hidden="true">ॐ</span>
+        <span class="brand-name">Sanātana Dharma<span class="brand-byline">{isHindi ? 'संदर्भ सहित ज्ञान' : 'Knowledge with context'}</span></span>
+      </a>
+      <nav class="primary-nav" aria-label={isHindi ? 'मुख्य नेविगेशन' : 'Primary navigation'}>
+        <a href={withBase("/#sections")}>{isHindi ? 'विषय' : 'Explore'}</a>
+        <a href={withBase("/#progress")}>{isHindi ? 'प्रगति' : 'Progress'}</a>
+        <a href={withBase(isHindi ? '/hi/' : '/en/')} aria-current={isLibraryPage ? 'page' : undefined}>{isHindi ? 'ज्ञान संग्रह' : 'Library'}</a>
+        <span class="nav-divider" aria-hidden="true"></span>
+        <a class="nav-language" href={withBase(isHindi ? '/en/' : '/hi/')} lang={isHindi ? 'en' : 'hi'}>{isHindi ? 'English' : 'हिन्दी'}</a>
+      </nav>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="footer-brand" href="/"><span aria-hidden="true">ॐ</span> Sanātana Dharma</a>
+        <p>{isHindi
+          ? 'सामग्री स्रोत-सत्यापन और संपादकीय समीक्षा के बाद ही प्रकाशित होगी।'
+          : 'Content is published only after source verification and editorial review.'}</p>
+        <div class="footer-links"><a href={withBase("/en/")}>{isHindi ? 'अंग्रेज़ी संग्रह' : 'English library'}</a><a href={withBase("/hi/")} lang="hi">{isHindi ? 'हिन्दी संग्रह' : 'Hindi library'}</a><a href={withBase("/#principles")}>{isHindi ? 'संपादकीय सिद्धांत' : 'Editorial principles'}</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
