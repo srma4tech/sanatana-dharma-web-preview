@@ -27,7 +27,7 @@ const sourceReferences: Array<any> = item.sourceReferences || [];
 <BaseLayout title={`${title} — Sanātana Dharma`} description={description} lang={locale}>
   <main id="main" class="article-page">
     <nav class="breadcrumbs" aria-label={isHindi ? 'पृष्ठ स्थान' : 'Breadcrumb'}>
-      <a href={withBase(`/${locale}/`)}>{isHindi ? 'ज्ञान संग्रह' : 'Knowledge library'}</a>
+      <a href={withBase('/' + locale + '/')}>{isHindi ? 'ज्ञान संग्रह' : 'Knowledge library'}</a>
       <span aria-hidden="true">/</span>
       <span aria-current="page">{localized.title}</span>
     </nav>
@@ -37,8 +37,8 @@ const sourceReferences: Array<any> = item.sourceReferences || [];
         <h1>{localized.title}</h1>
         <p class="article-summary">{localized.summary}</p>
         <nav class="language-switch" aria-label={isHindi ? 'भाषा चुनें' : 'Choose language'}>
-          {item.locales.en && <a href={withBase(`/en/${item.slug}/`)} lang="en">English</a>}
-          {item.locales.hi && <a href={withBase(`/hi/${item.slug}/`)} lang="hi">हिन्दी</a>}
+          {item.locales.en && <a href={withBase('/en/' + item.slug + '/')} lang="en">English</a>}
+          {item.locales.hi && <a href={withBase('/hi/' + item.slug + '/')} lang="hi">हिन्दी</a>}
         </nav>
       </header>
       <div class="article-body">
