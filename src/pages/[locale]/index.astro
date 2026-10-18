@@ -1,5 +1,4 @@
 ---
-const withBase = (path: string) => import.meta.env.BASE_URL.replace(/\/$/, '') + (path.startsWith('/') ? path : '/' + path);
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import contentData from '../../data/published-content.json';
 
@@ -74,7 +73,7 @@ const sections = isHindi ? [
             const localized = item.locales[locale];
             return <article class="library-card">
               <p class="card-type">{item.type.replaceAll('-', ' ')}</p>
-              <h3><a href={withBase('/' + locale + '/' + item.slug + '/')}>{localized.title}</a></h3>
+              <h3><a href={import.meta.env.BASE_URL + locale + '/' + item.slug + '/'}>{localized.title}</a></h3>
               <p>{localized.summary}</p>
             </article>;
           })}
