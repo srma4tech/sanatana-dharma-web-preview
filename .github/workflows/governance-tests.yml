@@ -1,0 +1,41 @@
+name: Governance tests
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'scripts/prepare-content-release.mjs'
+      - 'tests/**'
+      - 'src/data/published-content.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/governance-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: governance-tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Astro and TypeScript checks
+        run: npm run check
+      - name: Build preview with empty-content safeguards
+        run: npm run build
+      - name: Run governance and site contract tests
+        run: npm test
