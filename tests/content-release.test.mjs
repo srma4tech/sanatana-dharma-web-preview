@@ -123,3 +123,54 @@ test('rejects source URLs that are not HTTP or HTTPS', () => {
     fs.rmSync(f.root, { recursive: true, force: true });
   }
 });
+
+
+test('rejects record-level publisher approval without approver identity and date', () => {
+  const f = fixture();
+  try {
+    const record = JSON.parse(fs.readFileSync(f.recordPath, 'utf8'));
+    record.editorial.publisherApproval = { approved: true };
+    const bytes = JSON.stringify(record);
+    fs.writeFileSync(f.recordPath, bytes);
+    f.manifest.contentItems[0].sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+    fs.writeFileSync(f.manifestPath, JSON.stringify(f.manifest));
+    assert.throws(() => loadAndValidateRelease(f.root), /record-level publisher approval.*(identity|approver|date)/i);
+  } finally {
+    fs.rmSync(f.root, { recursive: true, force: true });
+  }
+});
+
+test('rejects verified claim references that omit claim-evidence locator and reviewer metadata', () => {
+  const f = fixture();
+  try {
+    const record = JSON.parse(fs.readFileSync(f.recordPath, 'utf8'));
+    record.sources[0] = {
+      sourceId: 'source-1',
+      verificationStatus: 'verified'
+    };
+    const bytes = JSON.stringify(record);
+    fs.writeFileSync(f.recordPath, bytes);
+    f.manifest.contentItems[0].sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+    fs.writeFileSync(f.manifestPath, JSON.stringify(f.manifest));
+    assert.throws(() => loadAndValidateRelease(f.root), /source reference.*(locator|reviewer|claim|verification metadata)/i);
+  } finally {
+    fs.rmSync(f.root, { recursive: true, force: true });
+  }
+});
+
+test('rejects initiation-restricted mantra fixtures that expose recitation text', () => {
+  const f = fixture();
+  try {
+    const record = JSON.parse(fs.readFileSync(f.recordPath, 'utf8'));
+    record.type = 'mantra-or-stotra';
+    record.mantraDetails = { accessTier: 'initiation-required', mantraText: 'TEST-ONLY FORBIDDEN CONTENT' };
+    const bytes = JSON.stringify(record);
+    fs.writeFileSync(f.recordPath, bytes);
+    f.manifest.contentItems[0].type = record.type;
+    f.manifest.contentItems[0].sha256 = crypto.createHash('sha256').update(bytes).digest('hex');
+    fs.writeFileSync(f.manifestPath, JSON.stringify(f.manifest));
+    assert.throws(() => loadAndValidateRelease(f.root), /initiation-required mantra.*forbidden field mantraText/);
+  } finally {
+    fs.rmSync(f.root, { recursive: true, force: true });
+  }
+});
