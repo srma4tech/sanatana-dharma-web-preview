@@ -1,0 +1,77 @@
+---
+import { withBase } from 'astro:base';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import contentData from '../../data/published-content.json';
+
+const releaseItems = contentData.items as Array<any>;
+
+export function getStaticPaths() {
+  if (contentData.releaseStatus !== 'validated') return [];
+  return releaseItems.flatMap((item) => {
+    if (item.status !== 'published' || !item.slug) return [];
+    return (['en', 'hi'] as const).filter((locale) => item.locales?.[locale]).map((locale) => ({
+      params: { locale, slug: item.slug },
+      props: { item, locale }
+    }));
+  });
+}
+
+const { item } = Astro.props;
+const locale = Astro.props.locale === 'hi' ? 'hi' : 'en';
+const localized = item.locales[locale];
+const isHindi = locale === 'hi';
+const title = localized.seoTitle || localized.title;
+const description = localized.seoDescription || localized.summary;
+const sourceReferences: Array<any> = item.sourceReferences || [];
+---
+<BaseLayout title={`${title} — Sanātana Dharma`} description={description} lang={locale}>
+  <main id="main" class="article-page">
+    <nav class="breadcrumbs" aria-label={isHindi ? 'पृष्ठ स्थान' : 'Breadcrumb'}>
+      <a href={withBase(`/${locale}/`)}>{isHindi ? 'ज्ञान संग्रह' : 'Knowledge library'}</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">{localized.title}</span>
+    </nav>
+    <article>
+      <header class="article-header">
+        <p class="eyebrow">{item.type.replaceAll('-', ' ')}</p>
+        <h1>{localized.title}</h1>
+        <p class="article-summary">{localized.summary}</p>
+        <nav class="language-switch" aria-label={isHindi ? 'भाषा चुनें' : 'Choose language'}>
+          {item.locales.en && <a href={withBase(`/en/${item.slug}/`)} lang="en">English</a>}
+          {item.locales.hi && <a href={withBase(`/hi/${item.slug}/`)} lang="hi">हिन्दी</a>}
+        </nav>
+      </header>
+      <div class="article-body">
+        {localized.body.map((section: any) => (
+          <section id={section.id} aria-labelledby={`heading-${section.id}`}>
+            <h2 id={`heading-${section.id}`}>{section.heading}</h2>
+            {section.blocks.map((block: any) => {
+              if (block.kind === 'list') return <div class="content-list"><p>{block.text}</p><ul>{(block.items || []).map((entry: string) => <li>{entry}</li>)}</ul></div>;
+              if (block.kind === 'callout') return <aside class="content-callout"><p>{block.text}</p></aside>;
+              if (block.kind === 'note') return <aside class="content-note"><p>{block.text}</p></aside>;
+              if (block.kind === 'quote' || block.kind === 'verse') return <blockquote><p>{block.text}</p>{block.attribution && <cite>{block.attribution}</cite>}</blockquote>;
+              return <p>{block.text}</p>;
+            })}
+          </section>
+        ))}
+      </div>
+      {sourceReferences.length > 0 && (
+        <section class="source-list" aria-labelledby="sources-heading">
+          <h2 id="sources-heading">{isHindi ? 'स्रोत और सत्यापन' : 'Sources and verification'}</h2>
+          <p>{isHindi ? 'नीचे दिए गए स्रोत लेख के दावों के संदर्भ हैं।' : 'The following source records support claims made in this article.'}</p>
+          <ol>
+            {sourceReferences.map((reference: any) => (
+              <li>
+                <strong>{reference.source?.title || reference.sourceId}</strong>
+                {reference.source?.creators?.length > 0 && <span> — {reference.source.creators.join(', ')}</span>}
+                {reference.locator && <p>{isHindi ? 'संदर्भ:' : 'Locator:'} {reference.locator}</p>}
+                {reference.claimSummary && <p>{reference.claimSummary}</p>}
+                {reference.source?.url && <p><a href={reference.source.url} rel="noopener noreferrer">{isHindi ? 'स्रोत खोलें' : 'Open source'}</a></p>}
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+    </article>
+  </main>
+</BaseLayout>
