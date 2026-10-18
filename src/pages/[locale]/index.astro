@@ -1,0 +1,93 @@
+---
+import { withBase } from 'astro:base';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import contentData from '../../data/published-content.json';
+
+export function getStaticPaths() {
+  return ['en', 'hi'].map((locale) => ({ params: { locale } }));
+}
+
+const locale = Astro.params.locale === 'hi' ? 'hi' : 'en';
+const releaseItems = contentData.items as Array<any>;
+const isHindi = locale === 'hi';
+const items = contentData.releaseStatus === 'validated'
+  ? releaseItems.filter((item) => item.status === 'published' && item.locales?.[locale])
+  : [];
+const pageTitle = isHindi ? 'ज्ञान संग्रह' : 'Knowledge library';
+const description = isHindi
+  ? 'सनातन धर्म पर स्रोत-सत्यापित और संपादकीय समीक्षा से स्वीकृत सामग्री।'
+  : 'Source-verified and editorially reviewed Sanātana Dharma resources.';
+const sections = isHindi ? [
+  { title: 'देवता और स्वरूप', detail: 'नाम, प्रतीक, कथाएँ और परंपराएँ', status: 'प्रगति में', state: 'progress' },
+  { title: 'शास्त्र और ग्रंथ', detail: 'पाठ-मार्गदर्शिका, संदर्भ और स्रोत', status: 'प्रगति में', state: 'progress' },
+  { title: 'कथाएँ और आख्यान', detail: 'ग्रंथ और क्षेत्रीय संदर्भ सहित', status: 'प्रगति में', state: 'progress' },
+  { title: 'दर्शन और परंपराएँ', detail: 'विचार, संप्रदाय और विविध व्याख्याएँ', status: 'प्रगति में', state: 'progress' },
+  { title: 'भक्ति, पर्व और आचरण', detail: 'सावधानीपूर्वक संदर्भ सहित', status: 'प्रगति में', state: 'progress' },
+  { title: 'मंदिर और पवित्र स्थल', detail: 'परंपरा, भूगोल और उपलब्ध ऐतिहासिक प्रमाण', status: 'प्रगति में', state: 'progress' },
+  { title: 'अध्ययन-मार्ग और शब्दावली', detail: 'नए पाठकों के लिए क्रमबद्ध अध्ययन', status: 'प्रगति में', state: 'progress' }
+] : [
+  { title: 'Deities & forms', detail: 'Names, symbols, narratives, and traditions', status: 'In progress', state: 'progress' },
+  { title: 'Scriptures & texts', detail: 'Reading guides, context, and source references', status: 'In progress', state: 'progress' },
+  { title: 'Stories & narratives', detail: 'Accounts with textual and regional context', status: 'In progress', state: 'progress' },
+  { title: 'Philosophy & traditions', detail: 'Ideas, schools, and diverse interpretations', status: 'In progress', state: 'progress' },
+  { title: 'Devotion, festivals & practice', detail: 'Careful context for observances and devotional life', status: 'In progress', state: 'progress' },
+  { title: 'Temples & sacred places', detail: 'Tradition, geography, and documented history', status: 'In progress', state: 'progress' },
+  { title: 'Guided learning & glossary', detail: 'Structured learning for newcomers', status: 'In progress', state: 'progress' }
+];
+---
+<BaseLayout title={`${pageTitle} — Sanātana Dharma`} description={description} lang={locale}>
+  <main id="main" class="library-page">
+    <section class="library-hero" aria-labelledby="library-title">
+      <p class="eyebrow">{isHindi ? 'सीखने की यात्रा' : 'A learning journey'}</p>
+      <h1 id="library-title">{pageTitle}</h1>
+      <p class="library-intro">{isHindi
+        ? 'सनातन धर्म को उसके ग्रंथों, परंपराओं और संदर्भों के साथ समझने के लिए एक सावधानीपूर्वक तैयार किया जा रहा संग्रह।'
+        : 'A carefully prepared collection for exploring Sanātana Dharma through its texts, traditions, and context.'}</p>
+      <div class="library-status-note"><span class="status-dot status-dot-progress" aria-hidden="true"></span><span>{isHindi
+        ? 'संग्रह पर काम जारी है। कोई लेख तब तक प्रकाशित नहीं होगा जब तक स्रोत और हिंदी-अंग्रेज़ी समीक्षा पूरी न हो।'
+        : 'The library is in progress. Articles remain unpublished until source checks and Hindi-English review are complete.'}</span></div>
+    </section>
+    <section class="library-sections" aria-labelledby="library-sections-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">{isHindi ? 'विषय मानचित्र' : 'Knowledge map'}</p><h2 id="library-sections-title">{isHindi ? 'अध्ययन के क्षेत्र' : 'Learning areas'}</h2></div>
+        <p class="section-intro">{isHindi
+          ? 'स्थिति वेबसाइट अनुभाग की तैयारी दिखाती है; इसका अर्थ यह नहीं कि लेख पहले से प्रकाशित हैं।'
+          : 'Status describes section preparation, not the publication of articles.'}</p>
+      </div>
+      <div class="library-topic-grid">
+        {sections.map((section, index) => (
+          <article class="library-topic-card">
+            <span class="library-topic-index">{String(index + 1).padStart(2, '0')}</span>
+            <div class="library-topic-content"><h3>{section.title}</h3><p>{section.detail}</p></div>
+            <span class={`status-badge ${section.state === 'progress' ? 'status-badge-progress' : 'status-badge-planned'}`}>{section.status}</span>
+          </article>
+        ))}
+      </div>
+    </section>
+    <section class="published-library" aria-labelledby="published-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">{isHindi ? 'समीक्षित लेख' : 'Reviewed articles'}</p><h2 id="published-title">{isHindi ? 'प्रकाशित सामग्री' : 'Published resources'}</h2></div>
+      </div>
+      {items.length > 0 ? (
+        <div class="library-grid">
+          {items.map((item) => {
+            const localized = item.locales[locale];
+            return <article class="library-card">
+              <p class="card-type">{item.type.replaceAll('-', ' ')}</p>
+              <h3><a href={withBase(`/${locale}/${item.slug}/`)}>{localized.title}</a></h3>
+              <p>{localized.summary}</p>
+            </article>;
+          })}
+        </div>
+      ) : (
+        <section class="empty-state" aria-live="polite">
+          <span class="empty-state-mark" aria-hidden="true">✦</span>
+          <h3>{isHindi ? 'पहले लेख तैयार किए जा रहे हैं' : 'First articles are being prepared'}</h3>
+          <p>{isHindi
+            ? 'अभी कोई लेख प्रकाशन के लिए स्वीकृत नहीं है। पहले शिव-विषयक सामग्री पर शोध, स्रोत-सत्यापन और दोनों भाषाओं की समीक्षा होगी।'
+            : 'No articles are approved for publication yet. The first Shiva collection will go through research, source verification, and review in both languages.'}</p>
+        </section>
+      )}
+    </section>
+  </main>
+</BaseLayout>
