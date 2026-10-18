@@ -1,0 +1,95 @@
+---
+import { withBase } from 'astro:base';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Sanātana Dharma — Explore with devotion, understand with context"
+  description="A bilingual Hindi-English knowledge and devotion platform for exploring Sanātana Dharma with respect, context, and transparent source review."
+>
+  <main id="main" class="home-page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy-block">
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> Hindi · English · Evidence-led</p>
+        <h1 id="hero-title">A living tradition.<br /><span>A thoughtful way to explore.</span></h1>
+        <p class="hero-copy">Explore Sanātana Dharma through its deities, scriptures, stories, philosophy, sacred places, and devotional traditions—with respect for diversity and honesty about sources.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href={withBase("/en/")}>Explore the library <span aria-hidden="true">→</span></a>
+          <a class="button button-secondary" href={withBase("/hi/")} lang="hi">हिन्दी में पढ़ें</a>
+        </div>
+        <p class="hero-note"><span class="status-dot status-dot-progress" aria-hidden="true"></span> The platform is in active development. Articles are published only after source verification and review in both languages.</p>
+      </div>
+      <aside class="hero-panel" aria-label="Platform commitments">
+        <div class="hero-panel-top"><span class="om-mark" aria-hidden="true">ॐ</span><span class="panel-label">Our commitment</span></div>
+        <p class="panel-quote">Reverence without exaggeration. Knowledge without guesswork.</p>
+        <div class="panel-rule"></div>
+        <ul class="commitment-list">
+          <li><span aria-hidden="true">✓</span> Source-aware learning</li>
+          <li><span aria-hidden="true">✓</span> Hindi and English together</li>
+          <li><span aria-hidden="true">✓</span> Traditions presented with context</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="progress" class="section-block" aria-labelledby="progress-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Project status</p><h2 id="progress-title">What is ready—and what comes next</h2></div>
+        <p class="section-intro">We share progress openly. A completed technical feature does not mean its religious content is already verified or published.</p>
+      </div>
+      <div class="status-grid">
+        <article class="status-card status-card-complete">
+          <div class="status-card-head"><span class="status-icon" aria-hidden="true">✓</span><span class="status-badge status-badge-complete">Completed</span></div>
+          <h3>Bilingual site foundation</h3>
+          <p>English and Hindi library routes, responsive page structure, and accessible navigation are in place.</p>
+        </article>
+        <article class="status-card status-card-complete">
+          <div class="status-card-head"><span class="status-icon" aria-hidden="true">✓</span><span class="status-badge status-badge-complete">Completed</span></div>
+          <h3>Evidence and publishing safeguards</h3>
+          <p>Content is designed to require identifiable sources, independent language review, and explicit approval before release.</p>
+        </article>
+        <article class="status-card status-card-progress">
+          <div class="status-card-head"><span class="status-icon" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></div>
+          <h3>Reading experience and section layouts</h3>
+          <p>We are improving the mobile-first interface and preparing clear entry points for each learning area.</p>
+        </article>
+        <article class="status-card status-card-progress">
+          <div class="status-card-head"><span class="status-icon" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></div>
+          <h3>First Shiva learning collection</h3>
+          <p>The first research batch is being prepared. Articles will appear only after evidence checks and Hindi-English review.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sections" class="section-block section-tinted" aria-labelledby="sections-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Explore the knowledge map</p><h2 id="sections-title">Many paths into the tradition</h2></div>
+        <p class="section-intro">These learning areas are being built in stages. Their status describes the website section—not a claim that articles are already published.</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">ॐ</span><span class="topic-card-copy"><strong>Deities &amp; forms</strong><span>Names, attributes, narratives, and traditions</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">ग्र</span><span class="topic-card-copy"><strong>Scriptures &amp; texts</strong><span>Reading guides, context, and source references</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">कथा</span><span class="topic-card-copy"><strong>Stories &amp; narratives</strong><span>Accounts with their textual and regional context</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">◉</span><span class="topic-card-copy"><strong>Philosophy &amp; traditions</strong><span>Concepts, schools, and differing interpretations</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">दीप</span><span class="topic-card-copy"><strong>Devotion, festivals &amp; practice</strong><span>Careful context for observances and devotional life</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">⌖</span><span class="topic-card-copy"><strong>Temples &amp; sacred places</strong><span>Traditions, geography, and documented history</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">↗</span><span class="topic-card-copy"><strong>Guided learning &amp; glossary</strong><span>Beginner paths and clear explanations of key terms</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
+      </div>
+      <p class="section-footnote">No articles are currently approved for publication. <a href="/en/">Visit the library status page</a> for the latest availability.</p>
+    </section>
+
+    <section id="principles" class="section-block principles-section" aria-labelledby="principles-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">How we work</p><h2 id="principles-title">Respect the tradition. Be honest about evidence.</h2></div>
+      </div>
+      <div class="principle-grid">
+        <article><span class="principle-number">01</span><h3>Sources are visible</h3><p>Material claims should point to identifiable sources and precise locations. Uncertainty is disclosed, never filled with guesswork.</p></article>
+        <article><span class="principle-number">02</span><h3>Both languages matter</h3><p>Hindi and English receive separate language and subject review before an item can be published.</p></article>
+        <article><span class="principle-number">03</span><h3>Differences are respected</h3><p>Textual, historical, scholarly, and tradition-specific claims are distinguished instead of being blended into one universal account.</p></article>
+        <article><span class="principle-number">04</span><h3>Practice is handled carefully</h3><p>Initiation-restricted mantra text and operational ritual instructions are not published as open how-to content.</p></article>
+      </div>
+    </section>
+    <section class="closing-band" aria-labelledby="closing-title">
+      <div><p class="eyebrow">Start exploring</p><h2 id="closing-title">A careful library, built one verified step at a time.</h2></div>
+      <div class="closing-actions"><a class="button button-light" href="/en/">Open English library →</a><a class="button button-outline-light" href="/hi/" lang="hi">हिन्दी संग्रह खोलें →</a></div>
+    </section>
+  </main>
+</BaseLayout>
