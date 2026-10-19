@@ -1,18 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import contentData from '../../data/published-content.json';
-
-const releaseItems = contentData.items as Array<any>;
+import { getPublishedContent } from '../../lib/published-content.js';
 
 export function getStaticPaths() {
-  if (contentData.releaseStatus !== 'validated') return [];
-  return releaseItems.flatMap((item) => {
-    if (item.status !== 'published' || !item.slug) return [];
-    return (['en', 'hi'] as const).filter((locale) => item.locales?.[locale]).map((locale) => ({
-      params: { locale, slug: item.slug },
-      props: { item, locale }
-    }));
-  });
+  return (['en', 'hi'] as const).flatMap((locale) =>
+    getPublishedContent(contentData, locale)
+      .filter((item) => typeof item.slug === 'string' && item.slug.trim())
+      .map((item) => ({
+        params: { locale, slug: item.slug },
+        props: { item, locale }
+      }))
+  );
 }
 
 const { item } = Astro.props;
