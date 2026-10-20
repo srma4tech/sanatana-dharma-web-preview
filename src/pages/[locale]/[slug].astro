@@ -6,8 +6,8 @@ import { getPublishedContent } from '../../lib/published-content.js';
 export function getStaticPaths() {
   return (['en', 'hi'] as const).flatMap((locale) =>
     getPublishedContent(contentData, locale)
-      .filter((item) => typeof item.slug === 'string' && item.slug.trim())
-      .map((item) => ({
+      .filter((item: any) => typeof item.slug === 'string' && item.slug.trim())
+      .map((item: any) => ({
         params: { locale, slug: item.slug },
         props: { item, locale }
       }))
