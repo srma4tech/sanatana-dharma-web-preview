@@ -1,17 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import contentData from '../../data/published-content.json';
+import { getPublishedContent } from '../../lib/published-content.js';
 
 export function getStaticPaths() {
   return ['en', 'hi'].map((locale) => ({ params: { locale } }));
 }
 
 const locale = Astro.params.locale === 'hi' ? 'hi' : 'en';
-const releaseItems = contentData.items as Array<any>;
 const isHindi = locale === 'hi';
-const items = contentData.releaseStatus === 'validated'
-  ? releaseItems.filter((item) => item.status === 'published' && item.locales?.[locale])
-  : [];
+const items = getPublishedContent(contentData, locale) as Array<any>;
 const pageTitle = isHindi ? 'ज्ञान संग्रह' : 'Knowledge library';
 const description = isHindi
   ? 'सनातन धर्म पर स्रोत-सत्यापित और संपादकीय समीक्षा से स्वीकृत सामग्री।'
