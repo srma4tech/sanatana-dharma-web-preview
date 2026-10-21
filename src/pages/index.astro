@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import reviewData from '../data/review-preview-content.json';
-const featured = reviewData.items || [];
+const featured = (reviewData.items || []).slice(0, 3);
 ---
 <BaseLayout
   title="Sanātana Dharma — Knowledge, context, and devotion"
@@ -38,9 +38,13 @@ const featured = reviewData.items || [];
     <section class="home-collection section-block" aria-labelledby="collection-title">
       <div class="section-heading"><div><p class="eyebrow">Curated learning</p><h2 id="collection-title">A library built for meaningful discovery</h2></div><p class="section-intro">Start with an accessible introduction, follow the sources, and continue into related topics at your own pace.</p></div>
       <div class="home-topic-grid">
-        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/'}><span class="home-topic-symbol" aria-hidden="true">ॐ</span><span><strong>Deities & forms</strong><small>Names, attributes, visual forms, and traditions</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/selected-shiva-forms/'}><span class="home-topic-symbol" aria-hidden="true">ॐ</span><span><strong>Deities & forms</strong><small>Selected forms and their art-historical contexts</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
         <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/rudra-shiva-terminology/'}><span class="home-topic-symbol" aria-hidden="true">ग्र</span><span><strong>Texts & terminology</strong><small>Read names and concepts within their textual context</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
         <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/shiva-iconography-symbols/'}><span class="home-topic-symbol" aria-hidden="true">◉</span><span><strong>Symbols & sacred art</strong><small>Understand selected images through object-specific sources</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/shaiva-traditions-introduction/'}><span class="home-topic-symbol" aria-hidden="true">◈</span><span><strong>Shaiva traditions</strong><small>Explore historical, philosophical, and regional diversity</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/shiva-scripture-guide/'}><span class="home-topic-symbol" aria-hidden="true">श</span><span><strong>Scripture guide</strong><small>Identify texts, editions, and interpretive context</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/beginner-shiva-learning-path/'}><span class="home-topic-symbol" aria-hidden="true">↗</span><span><strong>Guided learning</strong><small>A paced path from foundations to source-aware reading</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/shiva-shakti-relationship/'}><span class="home-topic-symbol" aria-hidden="true">शक्ति</span><span><strong>Shiva & Shakti</strong><small>Compare perspectives without flattening traditions</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
         <a class="home-topic-card" href={import.meta.env.BASE_URL + 'hi/'}><span class="home-topic-symbol" aria-hidden="true">अ</span><span><strong>हिन्दी ज्ञान संग्रह</strong><small>Explore the same collection in Hindi</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
       </div>
     </section>
