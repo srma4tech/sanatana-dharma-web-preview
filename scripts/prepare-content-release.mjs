@@ -146,11 +146,26 @@ export function loadAndValidateRelease(releaseRoot) {
         record.editorial?.publisherApproval?.approved !== true) {
       fail(`record ${entry.id} has not passed editorial/publisher approval`);
     }
+    const recordApproval = record.editorial?.publisherApproval;
+    if (typeof recordApproval?.approvedBy !== 'string' || !recordApproval.approvedBy.trim() ||
+        !Number.isFinite(Date.parse(recordApproval.approvedOn ?? ''))) {
+      fail(`record-level publisher approval for ${entry.id} is missing approver identity or approval date`);
+    }
     validateLocale(record, 'hi');
     validateLocale(record, 'en');
     if (!Array.isArray(record.sources) || record.sources.length === 0 ||
-        record.sources.some(source => source.verificationStatus !== 'verified' || typeof source.sourceId !== 'string' || !sourceMap.has(source.sourceId) || sourceMap.get(source.sourceId)?.verificationStatus !== 'verified')) {
+        record.sources.some(source => source.verificationStatus !== 'verified' ||
+          typeof source.sourceId !== 'string' || !sourceMap.has(source.sourceId) ||
+          sourceMap.get(source.sourceId)?.verificationStatus !== 'verified')) {
       fail(`record ${entry.id} lacks verified claim-level sources`);
+    }
+    if (record.sources.some(source =>
+      typeof source.locator !== 'string' || !source.locator.trim() ||
+      typeof source.claimSummary !== 'string' || !source.claimSummary.trim() ||
+      typeof source.claimClass !== 'string' || !source.claimClass.trim() ||
+      typeof source.verifiedBy !== 'string' || !source.verifiedBy.trim() ||
+      !Number.isFinite(Date.parse(source.verifiedOn ?? '')))) {
+      fail(`source reference for ${entry.id} is missing claim-evidence locator, claim, reviewer, or verification metadata`);
     }
     if (record.slug) {
       if (slugs.has(record.slug)) fail(`duplicate slug ${record.slug}`);
