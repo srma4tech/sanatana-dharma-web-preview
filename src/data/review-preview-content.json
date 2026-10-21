@@ -1,0 +1,482 @@
+{
+  "releaseStatus": "review-preview-only",
+  "note": "Owner review preview only. These records are copied from non-canonical drafts and are not approved for public publication. This dataset is separate from the validated release dataset and must never be used as a production release.",
+  "items": [
+    {
+      "id": "deity-shiva",
+      "slug": "shiva-overview",
+      "type": "deity-profile",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "Shiva overview",
+          "summary": "An introductory overview of Shiva that emphasizes the diversity of Hindu traditions and distinguishes scholarly description from tradition-specific understanding.",
+          "body": [
+            {
+              "id": "who-is-shiva",
+              "heading": "Who is Shiva?",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shiva is one of the major deities of Hindu traditions. Scholarship on Shiva describes a wide and varied presence across religious literature, ritual, worship, and South Asian art. The ways Shiva is understood and worshipped are not identical everywhere: regional histories and living traditions have developed distinctive expressions, and a short introduction cannot represent every community or lineage."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "In many Hindu traditions, Shiva is understood through varied theological, devotional, and philosophical frameworks. The sources currently cited here support the broad framing of Shiva’s significance and the diversity of Shiva-related traditions, but they do not yet independently substantiate every attribute or practice that could be included in a general overview. This draft therefore avoids a definitive list of attributes until tradition-specific sources are selected and reviewed. Subject-matter review remains required before publication."
+                }
+              ]
+            },
+            {
+              "id": "diversity-of-traditions",
+              "heading": "Shiva and the diversity of Hindu traditions",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "The name “Shiva” appears within many forms of Hindu devotion and religious thought. Some traditions place Shiva at the centre of their theology; others understand Shiva within broader relationships among deities and forms of the divine. Regional traditions also shape the stories, images, festivals, and practices through which Shiva is encountered."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "A responsible overview should leave room for this diversity. It should distinguish a source's historical or scholarly description from a tradition's own devotional understanding, and it should identify a specific tradition whenever a claim applies only to that tradition."
+                }
+              ]
+            },
+            {
+              "id": "how-to-read",
+              "heading": "How to read this introduction",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "This page is an orientation, not a complete account of Shiva-related scriptures, philosophical schools, rituals, or regional traditions. The companion topics in this batch explore the historical use of the names Rudra and Shiva, and the ways selected visual forms communicate meaning. Museum descriptions can help identify particular objects and art-historical contexts, but they do not by themselves define how every devotee understands an image."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव का परिचय",
+          "summary": "शिव का प्रारंभिक परिचय, जिसमें हिन्दू परंपराओं की विविधता और शैक्षणिक वर्णन तथा विशिष्ट परंपराओं की समझ के बीच अंतर पर बल दिया गया है।",
+          "body": [
+            {
+              "id": "who-is-shiva",
+              "heading": "शिव कौन हैं?",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शिव हिन्दू परंपराओं के प्रमुख देवताओं में से एक हैं। शिव पर उपलब्ध शैक्षणिक अध्ययन धार्मिक साहित्य, पूजा-पद्धतियों, अनुष्ठानों और दक्षिण एशियाई कला में उनकी व्यापक उपस्थिति का वर्णन करते हैं। शिव को समझने और उनकी उपासना करने के तरीके सभी स्थानों और समुदायों में एक जैसे नहीं हैं। अलग-अलग क्षेत्रों और जीवित परंपराओं ने अपनी विशिष्ट अभिव्यक्तियाँ विकसित की हैं; इसलिए एक संक्षिप्त परिचय हर समुदाय या परंपरा का पूरा प्रतिनिधित्व नहीं कर सकता।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "हिन्दू परंपराओं में शिव को अनेक धार्मिक, भक्तिपरक और दार्शनिक दृष्टिकोणों के माध्यम से समझा जाता है। यहाँ उद्धृत स्रोत शिव के महत्व और शिव-संबंधी परंपराओं की विविधता की व्यापक रूपरेखा का समर्थन करते हैं, लेकिन वे किसी सामान्य परिचय में शामिल किए जा सकने वाले हर गुण या साधना को स्वतंत्र रूप से प्रमाणित नहीं करते। इसलिए विशिष्ट परंपराओं से जुड़े स्रोत चुने जाने और उनकी समीक्षा होने तक यह प्रारूप गुणों की कोई अंतिम सूची प्रस्तुत नहीं करता। प्रकाशन से पहले विषय-विशेषज्ञ की समीक्षा आवश्यक है।"
+                }
+              ]
+            },
+            {
+              "id": "diversity-of-traditions",
+              "heading": "शिव और हिन्दू परंपराओं की विविधता",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "“शिव” नाम हिन्दू भक्ति और धार्मिक चिंतन की अनेक धाराओं में मिलता है। कुछ परंपराओं में शिव को अपने धार्मिक दर्शन के केंद्र में रखा जाता है; अन्य परंपराएँ शिव को देवताओं और दिव्यता के विभिन्न रूपों के व्यापक संबंधों के भीतर समझती हैं। क्षेत्रीय इतिहास भी उन कथाओं, प्रतिमाओं, त्योहारों और साधनाओं को आकार देते हैं जिनके माध्यम से शिव का स्मरण और अनुभव किया जाता है।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "एक संतुलित परिचय में इस विविधता के लिए स्थान होना चाहिए। किसी स्रोत के ऐतिहासिक या शैक्षणिक वर्णन को किसी परंपरा की अपनी भक्तिपरक समझ से अलग पहचानना चाहिए। यदि कोई कथन केवल किसी विशेष परंपरा पर लागू होता है, तो उस परंपरा का नाम स्पष्ट रूप से देना चाहिए।"
+                }
+              ]
+            },
+            {
+              "id": "how-to-read",
+              "heading": "इस परिचय को कैसे पढ़ें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "यह पृष्ठ शिव से संबंधित सभी शास्त्रों, दार्शनिक धाराओं, अनुष्ठानों या क्षेत्रीय परंपराओं का संपूर्ण विवरण नहीं, बल्कि प्रारंभिक परिचय है। इस बैच के अन्य विषय रुद्र और शिव नामों के ऐतिहासिक प्रयोग तथा कुछ चुने हुए दृश्य-स्वरूपों के अर्थ पर चर्चा करते हैं। संग्रहालयों के विवरण किसी विशेष कलाकृति और उसके कला-ऐतिहासिक संदर्भ को समझने में मदद करते हैं, लेकिन वे अपने आप यह निर्धारित नहीं करते कि प्रत्येक भक्त किसी प्रतिमा को किस प्रकार समझता है।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "rudra-shiva-terminology",
+        "shiva-iconography-symbols"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Oxford Academic, Extract → Introduction, lines 2535–2538 (page access checked 2026-10-21). Full chapter unavailable.",
+          "claimSummary": "Scholarly framing of Shiva's significance in Hindu traditions and South Asian art.",
+          "verificationStatus": "accessible-introduction-checked; sentence-level mapping and bilingual parity pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-002",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Oxford Academic, Extract → Introduction, lines 2535–2538 (page access checked 2026-10-21). Full chapter unavailable.",
+          "claimSummary": "Regional and historical diversity in Shiva-related traditions.",
+          "verificationStatus": "accessible-introduction-checked; sentence-level mapping and bilingual parity pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-004",
+          "source": {
+            "title": "Shaivism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554516049"
+          },
+          "locator": "Use only the accessible Extract → Introduction recorded in the 2026-10-20 source recheck; exact current locator should be rechecked before relying on it.",
+          "claimSummary": "Attributed scholarly context for the historical development of Shaivism.",
+          "verificationStatus": "accessible-extract previously observed; current claim-level recheck pending",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Evidence IDs refer to docs/research/deity-shiva-research.md. Preliminary support only; no independent review or publication approval is implied."
+    },
+    {
+      "id": "concept-rudra-shiva-terminology",
+      "slug": "rudra-shiva-terminology",
+      "type": "concept-article",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "Rudra and Shiva terminology",
+          "summary": "A careful introduction to historical discussion of Rudra and Shiva that avoids reducing their relationship to a universal, context-free claim.",
+          "body": [
+            {
+              "id": "why-both-names",
+              "heading": "Why discuss both names?",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "“Rudra” and “Shiva” are closely connected in the history of Hindu religious traditions, but their relationship should be described with care. A scholarly overview of Rudra–Shiva notes that the Rig Veda speaks of Rudra and discusses features that later scholarship connects with Shiva. That historical framing should not be simplified into either “the two names have always meant exactly the same thing” or “they are entirely unrelated.”"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "The Vedic Heritage Portal lists Rigveda, Śākala Saṃhitā, Maṇḍala 2, Sūkta 33 as a Rudra hymn and displays its hymn metadata. This is useful for locating a textual source, but the catalogue entry alone does not settle how a verse should be translated or interpreted. Verse-level discussion requires a clearly identified text or edition and a checked translation."
+                }
+              ]
+            },
+            {
+              "id": "historical-development",
+              "heading": "Historical development and later traditions",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Academic writing on Shaivism traces historical connections between Rudra worship and later Shiva traditions, while discussing the emergence of more clearly identifiable sectarian forms in later historical periods. This is a scholarly account of historical evidence, not a complete chronology of every community’s beliefs or practices."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "The names can carry different meanings depending on the text, period, language, and religious context. When discussing a specific passage, an article should state which source is being discussed and avoid assuming that a term has exactly the same function in every context."
+                }
+              ]
+            },
+            {
+              "id": "careful-reading",
+              "heading": "A careful reading practice",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "When encountering “Rudra” or “Shiva” in a translation:\n1. Identify the text and the passage, rather than relying on a name alone.\n2. Check the translator’s notes and the edition being used.\n3. Separate what the passage says from later theological interpretation.\n4. Where traditions differ, name the tradition or interpretation rather than presenting it as universal."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "This page does not offer a verse translation and does not attempt to resolve every theological or historical debate about the relationship between Rudra and Shiva."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "रुद्र और शिव की संज्ञाएँ",
+          "summary": "रुद्र और शिव के ऐतिहासिक संबंध पर सावधानीपूर्ण परिचय, जो इस संबंध को संदर्भ से अलग किसी एक सार्वभौमिक दावे में सीमित नहीं करता।",
+          "body": [
+            {
+              "id": "why-both-names",
+              "heading": "दोनों नामों पर चर्चा क्यों?",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "“रुद्र” और “शिव” हिन्दू धार्मिक परंपराओं के इतिहास में निकटता से जुड़े हुए हैं, लेकिन उनके संबंध का वर्णन सावधानी से करना चाहिए। रुद्र–शिव पर एक शैक्षणिक परिचय बताता है कि ऋग्वेद में रुद्र का उल्लेख मिलता है और उन विशेषताओं पर चर्चा करता है जिन्हें बाद के अध्ययनों में शिव से जोड़ा गया है। इस ऐतिहासिक दृष्टिकोण को सरल बनाकर न तो यह कहना चाहिए कि “दोनों नाम हमेशा हर संदर्भ में बिल्कुल एक ही अर्थ रखते थे,” और न ही यह कि “दोनों का आपस में कोई संबंध नहीं है।”"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "वैदिक हेरिटेज पोर्टल ऋग्वेद, शाकल संहिता, मंडल 2, सूक्त 33 को रुद्र-सूक्त के रूप में सूचीबद्ध करता है और उसके सूक्त-संबंधी विवरण दिखाता है। यह पाठ-स्रोत खोजने में उपयोगी है, लेकिन केवल सूची या विवरण से यह तय नहीं होता कि किसी मंत्र का अनुवाद या अर्थ क्या होना चाहिए। किसी मंत्र पर चर्चा करने के लिए स्पष्ट रूप से पहचाने गए पाठ या संस्करण और जाँचे हुए अनुवाद की आवश्यकता है।"
+                }
+              ]
+            },
+            {
+              "id": "historical-development",
+              "heading": "ऐतिहासिक विकास और बाद की परंपराएँ",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शैव परंपराओं पर शैक्षणिक लेखन रुद्र-उपासना और बाद की शिव-परंपराओं के ऐतिहासिक संबंधों का अध्ययन करता है। इसमें बाद के ऐतिहासिक कालों में अधिक स्पष्ट रूप से पहचाने जा सकने वाले संप्रदायगत रूपों के उभरने पर भी चर्चा होती है। यह ऐतिहासिक साक्ष्यों पर आधारित शैक्षणिक विवरण है, हर समुदाय की मान्यताओं या साधनाओं की संपूर्ण कालक्रम-सूची नहीं।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "“रुद्र” और “शिव” का अर्थ किसी पाठ, काल, भाषा और धार्मिक संदर्भ के अनुसार बदल सकता है। किसी विशेष अंश पर चर्चा करते समय लेख में स्रोत स्पष्ट होना चाहिए और यह मानकर नहीं चलना चाहिए कि हर संदर्भ में किसी शब्द का कार्य बिल्कुल समान है।"
+                }
+              ]
+            },
+            {
+              "id": "careful-reading",
+              "heading": "सावधानी से पाठ कैसे पढ़ें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "अनुवाद में “रुद्र” या “शिव” नाम मिलने पर:\n1. केवल नाम के आधार पर निष्कर्ष निकालने के बजाय मूल पाठ और संबंधित अंश की पहचान करें।\n2. अनुवादक की टिप्पणियाँ और प्रयुक्त संस्करण देखें।\n3. पाठ में सीधे कही गई बात और बाद की धार्मिक व्याख्या को अलग रखें।\n4. जहाँ परंपराओं में मतभेद हों, वहाँ संबंधित परंपरा या व्याख्या का नाम दें; उसे सार्वभौमिक मान्यता के रूप में प्रस्तुत न करें।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "यह पृष्ठ किसी मंत्र का अनुवाद प्रस्तुत नहीं करता और रुद्र तथा शिव के संबंध से जुड़े सभी धार्मिक या ऐतिहासिक विमर्शों का अंतिम निर्णय देने का प्रयास भी नहीं करता।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shiva-overview"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHIVA-003",
+          "source": {
+            "title": "Rudra-Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554515949"
+          },
+          "locator": "Oxford Academic, Extract → Introduction, lines 2501–2502 (page access checked 2026-10-21). Full chapter unavailable.",
+          "claimSummary": "Scholarly discussion of Rudra in Vedic material and the historical relationship with Shiva.",
+          "verificationStatus": "accessible-introduction-checked; historical claims remain Tier 2 and need careful attribution",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-004",
+          "source": {
+            "title": "Shaivism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554516049"
+          },
+          "locator": "Use only the accessible Extract → Introduction recorded in the 2026-10-20 source recheck; exact current locator should be rechecked before relying on it.",
+          "claimSummary": "Historical scholarly context for later Shaiva traditions.",
+          "verificationStatus": "accessible-extract previously observed; current claim-level recheck pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-005",
+          "source": {
+            "title": "Rigveda, Śākala Saṃhitā, Maṇḍala 2, Sūkta 33 — Vedic Heritage Portal",
+            "url": "https://vedicheritage.gov.in/samhitas/rigveda/shakala-samhita/rigveda-shakala-samhita-mandal-02-sukta-033/"
+          },
+          "locator": "Manual browser verification required; previous text extraction did not expose the hymn identifier or the word Rudra.",
+          "claimSummary": "Hymn identification and catalogue metadata only; not a checked translation.",
+          "verificationStatus": "not verified for a specific claim; do not rely on until manually checked",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Evidence IDs refer to docs/research/deity-shiva-research.md. No verse translation is included; source and subject review remain pending."
+    },
+    {
+      "id": "concept-shiva-iconography-symbols",
+      "slug": "shiva-iconography-symbols",
+      "type": "concept-article",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "Shiva iconography and symbols",
+          "summary": "An introduction to selected Shiva images through specific art objects and sites, distinguishing visible features, museum interpretation, and living devotional understanding.",
+          "body": [
+            {
+              "id": "images-in-context",
+              "heading": "Images are made in specific contexts",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shiva is represented through a range of visual forms in Hindu art. A particular sculpture or image should be read in its own historical, regional, material, and devotional context; one museum object cannot stand for every image or every community’s interpretation."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "The Los Angeles County Museum of Art catalogues a Shivalinga from Mathura and provides object metadata and curatorial interpretation. That record is a starting point for discussing this specific object, not proof that every community explains the linga in precisely the same way."
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "The Cave of Shiva at Elephanta includes several representations associated with Shiva, including a linga shrine and large sculptural panels. Art-historical descriptions discuss forms such as Sadashiva, Ardhanarishvara, and Gangadhara in relation to this cave’s sculptural program. These descriptions should remain tied to the site and its evidence rather than being generalized to all Hindu imagery."
+                }
+              ]
+            },
+            {
+              "id": "nataraja",
+              "heading": "Shiva as Nataraja",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "One widely recognized image is Shiva as Nataraja, the Lord of Dance. The Metropolitan Museum of Art describes two specific Chola-period copper-alloy images: object 1987.80.1, dated to about the late 11th century, and object 64.251, dated to the late 12th–early 13th century. Their catalogues describe features including a drum, flame, gesture of reassurance, raised foot, and a figure beneath the dancing deity. These interpretations belong to the cited museum records and should not be treated as an exhaustive account of every tradition’s understanding."
+                }
+              ]
+            },
+            {
+              "id": "respectful-interpretation",
+              "heading": "How to approach a symbol respectfully",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Symbols can have layered meanings, and those meanings may vary across traditions and contexts. A respectful introduction identifies the object or form, names the source of an interpretation, and leaves room for other documented understandings. Images must not be reused merely because they appear in a museum or educational page; image rights and attribution requirements must be checked separately."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव का स्वरूप और प्रतीक",
+          "summary": "विशिष्ट कलाकृतियों और स्थलों के माध्यम से शिव के चुने हुए दृश्य-स्वरूपों का परिचय, जिसमें प्रत्यक्ष विशेषताओं, संग्रहालय की व्याख्या और जीवित भक्तिपरक समझ के बीच अंतर रखा गया है।",
+          "body": [
+            {
+              "id": "images-in-context",
+              "heading": "प्रतिमाएँ विशिष्ट संदर्भों में निर्मित होती हैं",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "हिन्दू कला में शिव के अनेक दृश्य-स्वरूप मिलते हैं। किसी विशेष मूर्ति या प्रतिमा को उसके ऐतिहासिक, क्षेत्रीय, भौतिक और भक्तिपरक संदर्भ में समझना चाहिए। संग्रहालय में रखी एक कलाकृति सभी प्रतिमाओं या हर समुदाय की व्याख्या का प्रतिनिधित्व नहीं कर सकती।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "लॉस एंजिलिस काउंटी म्यूज़ियम ऑफ़ आर्ट मथुरा से प्राप्त एक शिवलिंग का सूची-विवरण, वस्तु-संबंधी जानकारी और क्यूरेटोरियल व्याख्या उपलब्ध कराता है। यह विवरण इसी विशिष्ट कलाकृति पर चर्चा शुरू करने के लिए उपयोगी है; इससे यह सिद्ध नहीं होता कि हर समुदाय शिवलिंग की व्याख्या बिल्कुल एक ही प्रकार से करता है।"
+                },
+                {
+                  "kind": "paragraph",
+                  "text": "एलिफेंटा की शिव-गुफा में शिव से संबंधित कई दृश्य-रूप हैं, जिनमें शिवलिंग का मंदिर और बड़े मूर्तिकला-पट्ट शामिल हैं। कला-ऐतिहासिक विवरण इस गुफा की मूर्तिकला के संदर्भ में सदाशिव, अर्धनारीश्वर और गंगाधर जैसे रूपों की चर्चा करते हैं। इन विवरणों को उसी स्थल और उसके साक्ष्यों से जोड़कर रखना चाहिए, न कि सभी हिन्दू प्रतिमाओं पर सामान्य रूप से लागू करना चाहिए।"
+                }
+              ]
+            },
+            {
+              "id": "nataraja",
+              "heading": "नटराज के रूप में शिव",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शिव का एक व्यापक रूप से पहचाना जाने वाला स्वरूप नटराज, अर्थात नृत्य के अधिपति, का है। मेट्रोपॉलिटन म्यूज़ियम ऑफ़ आर्ट की सूची में चोल काल की दो विशिष्ट कांस्य-मिश्रधातु प्रतिमाएँ दर्ज हैं: वस्तु 1987.80.1, जिसे लगभग 11वीं सदी के उत्तरार्ध का बताया गया है, और वस्तु 64.251, जिसे 12वीं सदी के उत्तरार्ध से 13वीं सदी के आरंभ का बताया गया है। इन सूची-विवरणों में डमरू, अग्नि, अभय मुद्रा, उठा हुआ पैर और नृत्यरत देवता के नीचे स्थित आकृति जैसे तत्वों का वर्णन है। ये व्याख्याएँ संबंधित संग्रहालय-विवरणों से जुड़ी हैं; इन्हें हर परंपरा की समझ का संपूर्ण विवरण नहीं मानना चाहिए।"
+                }
+              ]
+            },
+            {
+              "id": "respectful-interpretation",
+              "heading": "प्रतीकों को सम्मानपूर्वक समझना",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "प्रतीकों के कई स्तरों वाले अर्थ हो सकते हैं और संदर्भ या परंपरा के अनुसार उनकी व्याख्या बदल सकती है। एक सम्मानजनक परिचय कलाकृति या स्वरूप की पहचान करता है, व्याख्या के स्रोत का नाम देता है और अन्य प्रमाणित दृष्टिकोणों के लिए भी स्थान रखता है। केवल इसलिए किसी चित्र का वेबसाइट पर पुनः उपयोग नहीं करना चाहिए कि वह संग्रहालय या शैक्षणिक पृष्ठ पर उपलब्ध है; चित्र के अधिकार और श्रेय देने की शर्तों की अलग से जाँच आवश्यक है।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shiva-overview"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHIVA-006",
+          "source": {
+            "title": "Shivalinga — LACMA Collections",
+            "url": "https://collections.lacma.org/object/122010"
+          },
+          "locator": "LACMA object metadata and Curatorial Notes, prior source recheck lines 84–113; recheck exact page fields before final use.",
+          "claimSummary": "Object-specific metadata and attributed curatorial interpretation.",
+          "verificationStatus": "object-specific support previously observed; interpretation attribution and image rights still pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-007",
+          "source": {
+            "title": "The Cave of Shiva at Elephanta — Smarthistory",
+            "url": "https://smarthistory.org/elephanta/"
+          },
+          "locator": "Smarthistory Elephanta article; section-level locator still needs exact paragraph capture.",
+          "claimSummary": "Site-specific art-historical description of the Elephanta cave and selected sculptural forms.",
+          "verificationStatus": "site-specific source identified; exact claim-level locator pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-008",
+          "source": {
+            "title": "Elephanta Caves — UNESCO World Heritage Centre",
+            "url": "https://whc.unesco.org/en/list/244/"
+          },
+          "locator": "UNESCO World Heritage Centre, Elephanta Caves, Brief synthesis, lines 57–59 (page access checked 2026-10-21).",
+          "claimSummary": "Heritage-site context and dating as stated by UNESCO.",
+          "verificationStatus": "site description and approximate dating checked; attribute claims to UNESCO",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "MET-NATARAJA-1987-80-1",
+          "source": {
+            "title": "Shiva as Lord of Dance (Nataraja), object 1987.80.1 — The Metropolitan Museum of Art",
+            "url": "https://www.metmuseum.org/art/collection/search/39328"
+          },
+          "locator": "The Met object record, Artwork Details lines 41–49; interpretive text lines 10–12 and audio transcript lines 61–63 (checked 2026-10-21).",
+          "claimSummary": "Metadata and interpretation for this specific object only.",
+          "verificationStatus": "object metadata and interpretation checked; use only object-specific facts; confirm specific image/credit terms if reused",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "MET-NATARAJA-64-251",
+          "source": {
+            "title": "Shiva as Lord of Dance (Nataraja), object 64.251 — The Metropolitan Museum of Art",
+            "url": "https://www.metmuseum.org/art/collection/search/39329"
+          },
+          "locator": "The Met object record, Artwork Details lines 43–51 (checked 2026-10-21); interpretation lines 10–11.",
+          "claimSummary": "Metadata and interpretation for this separate object only.",
+          "verificationStatus": "object metadata and interpretation checked separately; public-domain image is indicated on the object page; preserve attribution and verify selected asset",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Evidence keys refer to docs/research/deity-shiva-research.md. Museum interpretations remain attributed to their specific records; no image reuse rights are implied.",
+      "heroImage": {
+        "src": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/39328/154124/main-image",
+        "alt": "Bronze sculpture of Shiva as Nataraja dancing within a ring of flames.",
+        "caption": "Shiva as Lord of Dance (Nataraja), copper alloy, Chola period; The Metropolitan Museum of Art, object 1987.80.1.",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/39328",
+        "rights": "Public-domain image, as indicated by The Metropolitan Museum of Art."
+      }
+    }
+  ]
+}

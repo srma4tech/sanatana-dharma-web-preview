@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import contentData from '../../data/published-content.json';
+import reviewData from '../../data/review-preview-content.json';
 import { getPublishedContent } from '../../lib/published-content.js';
 
 export function getStaticPaths() {
@@ -9,82 +10,95 @@ export function getStaticPaths() {
 
 const locale = Astro.params.locale === 'hi' ? 'hi' : 'en';
 const isHindi = locale === 'hi';
-const items = getPublishedContent(contentData, locale) as Array<any>;
+const publishedItems = getPublishedContent(contentData, locale).map((item: any) => ({ ...item, isReviewDraft: false }));
+const reviewItems = (reviewData.items || []).map((item: any) => ({ ...item, isReviewDraft: true }));
+const items = [...reviewItems, ...publishedItems];
 const pageTitle = isHindi ? 'ज्ञान संग्रह' : 'Knowledge library';
 const description = isHindi
-  ? 'सनातन धर्म पर स्रोत-सत्यापित और संपादकीय समीक्षा से स्वीकृत सामग्री।'
-  : 'Source-verified and editorially reviewed Sanātana Dharma resources.';
-const sections = isHindi ? [
-  { title: 'देवता और स्वरूप', detail: 'नाम, प्रतीक, कथाएँ और परंपराएँ', status: 'प्रगति में', state: 'progress' },
-  { title: 'शास्त्र और ग्रंथ', detail: 'पाठ-मार्गदर्शिका, संदर्भ और स्रोत', status: 'प्रगति में', state: 'progress' },
-  { title: 'कथाएँ और आख्यान', detail: 'ग्रंथ और क्षेत्रीय संदर्भ सहित', status: 'प्रगति में', state: 'progress' },
-  { title: 'दर्शन और परंपराएँ', detail: 'विचार, संप्रदाय और विविध व्याख्याएँ', status: 'प्रगति में', state: 'progress' },
-  { title: 'भक्ति, पर्व और आचरण', detail: 'सावधानीपूर्वक संदर्भ सहित', status: 'प्रगति में', state: 'progress' },
-  { title: 'मंदिर और पवित्र स्थल', detail: 'परंपरा, भूगोल और उपलब्ध ऐतिहासिक प्रमाण', status: 'प्रगति में', state: 'progress' },
-  { title: 'अध्ययन-मार्ग और शब्दावली', detail: 'नए पाठकों के लिए क्रमबद्ध अध्ययन', status: 'प्रगति में', state: 'progress' }
+  ? 'शिव-केंद्रित अध्ययन संग्रह, स्रोत-संदर्भ और हिंदी-अंग्रेज़ी पठन अनुभव।'
+  : 'Explore the Shiva learning collection with source references and bilingual reading.';
+const categories = isHindi ? [
+  { symbol: 'ॐ', title: 'देवता और स्वरूप', detail: 'देव-परिचय, रूप और परंपराएँ', href: '#featured' },
+  { symbol: 'ग्र', title: 'शास्त्र और ग्रंथ', detail: 'पाठ, संदर्भ और स्रोत', href: '#principles' },
+  { symbol: '◉', title: 'दर्शन और परंपराएँ', detail: 'विचार और विविध दृष्टिकोण', href: '#principles' },
+  { symbol: 'दीप', title: 'भक्ति और आचरण', detail: 'संदर्भ सहित devotional अध्ययन', href: '#principles' }
 ] : [
-  { title: 'Deities & forms', detail: 'Names, symbols, narratives, and traditions', status: 'In progress', state: 'progress' },
-  { title: 'Scriptures & texts', detail: 'Reading guides, context, and source references', status: 'In progress', state: 'progress' },
-  { title: 'Stories & narratives', detail: 'Accounts with textual and regional context', status: 'In progress', state: 'progress' },
-  { title: 'Philosophy & traditions', detail: 'Ideas, schools, and diverse interpretations', status: 'In progress', state: 'progress' },
-  { title: 'Devotion, festivals & practice', detail: 'Careful context for observances and devotional life', status: 'In progress', state: 'progress' },
-  { title: 'Temples & sacred places', detail: 'Tradition, geography, and documented history', status: 'In progress', state: 'progress' },
-  { title: 'Guided learning & glossary', detail: 'Structured learning for newcomers', status: 'In progress', state: 'progress' }
+  { symbol: 'ॐ', title: 'Deities & forms', detail: 'Profiles, forms, and traditions', href: '#featured' },
+  { symbol: 'ग्र', title: 'Scriptures & texts', detail: 'Texts, context, and references', href: '#principles' },
+  { symbol: '◉', title: 'Philosophy & traditions', detail: 'Ideas and diverse perspectives', href: '#principles' },
+  { symbol: 'दीप', title: 'Devotion & practice', detail: 'Careful, contextual learning', href: '#principles' }
 ];
 ---
 <BaseLayout title={`${pageTitle} — Sanātana Dharma`} description={description} lang={locale}>
-  <main id="main" class="library-page">
-    <section class="library-hero" aria-labelledby="library-title">
-      <p class="eyebrow">{isHindi ? 'सीखने की यात्रा' : 'A learning journey'}</p>
-      <h1 id="library-title">{pageTitle}</h1>
+  <main id="main" class="library-page library-page-redesign">
+    <div class="review-banner" role="note">
+      <span class="review-banner-mark" aria-hidden="true">✦</span>
+      <div><strong>{isHindi ? 'समीक्षा पूर्वावलोकन' : 'Review preview'}</strong><p>{isHindi ? 'शिव-संग्रह के प्रारूप समीक्षा के लिए उपलब्ध हैं। ये लेख अभी प्रकाशन के लिए स्वीकृत नहीं हैं; प्रत्येक स्रोत की स्थिति नीचे दी गई है।' : 'Shiva collection drafts are available for review. These articles are not yet approved for publication; source status is shown within each article.'}</p></div>
+    </div>
+    <section class="library-hero library-hero-redesign" aria-labelledby="library-title">
+      <p class="eyebrow">{isHindi ? 'ज्ञान · संदर्भ · भक्ति' : 'Knowledge · Context · Devotion'}</p>
+      <h1 id="library-title">{isHindi ? 'परंपरा को समझें। संदर्भ के साथ।' : 'Explore the tradition. With context.'}</h1>
       <p class="library-intro">{isHindi
-        ? 'सनातन धर्म को उसके ग्रंथों, परंपराओं और संदर्भों के साथ समझने के लिए एक सावधानीपूर्वक तैयार किया जा रहा संग्रह।'
-        : 'A carefully prepared collection for exploring Sanātana Dharma through its texts, traditions, and context.'}</p>
-      <div class="library-status-note"><span class="status-dot status-dot-progress" aria-hidden="true"></span><span>{isHindi
-        ? 'संग्रह पर काम जारी है। कोई लेख तब तक प्रकाशित नहीं होगा जब तक स्रोत और हिंदी-अंग्रेज़ी समीक्षा पूरी न हो।'
-        : 'The library is in progress. Articles remain unpublished until source checks and Hindi-English review are complete.'}</span></div>
-    </section>
-    <section class="library-sections" aria-labelledby="library-sections-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">{isHindi ? 'विषय मानचित्र' : 'Knowledge map'}</p><h2 id="library-sections-title">{isHindi ? 'अध्ययन के क्षेत्र' : 'Learning areas'}</h2></div>
-        <p class="section-intro">{isHindi
-          ? 'स्थिति वेबसाइट अनुभाग की तैयारी दिखाती है; इसका अर्थ यह नहीं कि लेख पहले से प्रकाशित हैं।'
-          : 'Status describes section preparation, not the publication of articles.'}</p>
-      </div>
-      <div class="library-topic-grid">
-        {sections.map((section, index) => (
-          <article class="library-topic-card">
-            <span class="library-topic-index">{String(index + 1).padStart(2, '0')}</span>
-            <div class="library-topic-content"><h3>{section.title}</h3><p>{section.detail}</p></div>
-            <span class={`status-badge ${section.state === 'progress' ? 'status-badge-progress' : 'status-badge-planned'}`}>{section.status}</span>
-          </article>
-        ))}
+        ? 'शिव से आरंभ करते हुए, ग्रंथों, कला, दर्शन और जीवित परंपराओं को सावधानी से समझने का संग्रह।'
+        : 'A growing library that begins with Shiva and explores texts, art, philosophy, and living traditions with care.'}</p>
+      <div class="library-search-wrap">
+        <label for="library-search">{isHindi ? 'विषय खोजें' : 'Search the library'}</label>
+        <input id="library-search" class="library-search" type="search" placeholder={isHindi ? 'जैसे शिव, रुद्र, प्रतीक…' : 'Try Shiva, Rudra, symbols…'} autocomplete="off" />
+        <p id="search-count" class="search-count" aria-live="polite">{isHindi ? `${items.length} लेख उपलब्ध` : `${items.length} articles available`}</p>
       </div>
     </section>
-    <section class="published-library" aria-labelledby="published-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">{isHindi ? 'समीक्षित लेख' : 'Reviewed articles'}</p><h2 id="published-title">{isHindi ? 'प्रकाशित सामग्री' : 'Published resources'}</h2></div>
+
+    <section class="category-section" aria-labelledby="category-title">
+      <div class="section-heading"><div><p class="eyebrow">{isHindi ? 'ज्ञान मानचित्र' : 'Knowledge map'}</p><h2 id="category-title">{isHindi ? 'अपनी रुचि से शुरुआत करें' : 'Find your path in'}</h2></div><p class="section-intro">{isHindi ? 'संग्रह का विस्तार क्रमशः होगा; अभी शिव-विषयक प्रारूप समीक्षा के लिए उपलब्ध हैं।' : 'The library will grow in focused collections. Shiva drafts are available now for owner review.'}</p></div>
+      <div class="category-grid">
+        {categories.map((category) => <a class="category-card" href={category.href}><span class="category-symbol" aria-hidden="true">{category.symbol}</span><span><strong>{category.title}</strong><small>{category.detail}</small></span><span class="category-arrow" aria-hidden="true">↗</span></a>)}
       </div>
-      {items.length > 0 ? (
-        <div class="library-grid">
-          {items.map((item) => {
-            const localized = item.locales[locale];
-            return <article class="library-card">
-              <p class="card-type">{item.type.replaceAll('-', ' ')}</p>
-              <h3><a href={import.meta.env.BASE_URL + locale + '/' + item.slug + '/'}>{localized.title}</a></h3>
-              <p>{localized.summary}</p>
-            </article>;
-          })}
-        </div>
-      ) : (
-        <section class="empty-state" aria-live="polite">
-          <span class="empty-state-mark" aria-hidden="true">✦</span>
-          <h3>{isHindi ? 'पहले लेख तैयार किए जा रहे हैं' : 'First articles are being prepared'}</h3>
-          <p>{isHindi
-            ? 'अभी कोई लेख प्रकाशन के लिए स्वीकृत नहीं है। पहले शिव-विषयक सामग्री पर शोध, स्रोत-सत्यापन और दोनों भाषाओं की समीक्षा होगी।'
-            : 'No articles are approved for publication yet. The first Shiva collection will go through research, source verification, and review in both languages.'}</p>
-        </section>
-      )}
+    </section>
+
+    <section id="featured" class="featured-section" aria-labelledby="featured-title">
+      <div class="section-heading"><div><p class="eyebrow">{isHindi ? 'शिव ज्ञान-संग्रह' : 'The Shiva collection'}</p><h2 id="featured-title">{isHindi ? 'पढ़ना शुरू करें' : 'Start exploring'}</h2></div><p class="section-intro">{isHindi ? 'हर लेख में विषय-संदर्भ, स्रोत-स्थिति और आगे पढ़ने के रास्ते दिए गए हैं।' : 'Each article includes context, source-status notes, and paths to related reading.'}</p></div>
+      <div class="library-grid library-grid-featured" id="article-list">
+        {items.map((item: any) => {
+          const localized = item.locales[locale];
+          return <article class="library-card feature-article-card" data-search={`${localized.title} ${localized.summary} ${item.id}`.toLowerCase()}>
+            <div class="article-card-top"><span class="card-type">{item.type.replaceAll('-', ' ')}</span><span class={item.isReviewDraft ? 'status-badge status-badge-review' : 'status-badge status-badge-complete'}>{item.isReviewDraft ? (isHindi ? 'समीक्षा प्रारूप' : 'Review draft') : (isHindi ? 'प्रकाशित' : 'Published')}</span></div>
+            <h3><a href={import.meta.env.BASE_URL + locale + '/' + item.slug + '/'}>{localized.title}</a></h3>
+            <p>{localized.summary}</p>
+            <div class="article-card-footer"><span>{isHindi ? `${item.sourceReferences?.length || 0} स्रोत-संदर्भ` : `${item.sourceReferences?.length || 0} source references`}</span><a href={import.meta.env.BASE_URL + locale + '/' + item.slug + '/'}>{isHindi ? 'लेख पढ़ें' : 'Read article'} <span aria-hidden="true">→</span></a></div>
+          </article>;
+        })}
+      </div>
+      <div id="no-results" class="empty-state" hidden><h3>{isHindi ? 'कोई मेल नहीं मिला' : 'No matching topics'}</h3><p>{isHindi ? 'दूसरा शब्द आज़माएँ या खोज साफ़ करें।' : 'Try another term or clear your search.'}</p></div>
+    </section>
+
+    <section id="principles" class="principles-section library-principles" aria-labelledby="principles-title">
+      <div class="section-heading"><div><p class="eyebrow">{isHindi ? 'संपादकीय दृष्टि' : 'Editorial approach'}</p><h2 id="principles-title">{isHindi ? 'श्रद्धा के साथ, प्रमाण के प्रति ईमानदारी' : 'Reverence, with honesty about evidence'}</h2></div></div>
+      <div class="principle-grid">
+        <article><span class="principle-number">01</span><h3>{isHindi ? 'स्रोत स्पष्ट' : 'Visible sources'}</h3><p>{isHindi ? 'स्रोत का नाम, संदर्भ और सत्यापन की स्थिति स्पष्ट रूप से दिखाई जाती है।' : 'Source names, locators, and verification status are shown rather than implied.'}</p></article>
+        <article><span class="principle-number">02</span><h3>{isHindi ? 'दोनों भाषाएँ' : 'Both languages matter'}</h3><p>{isHindi ? 'हिंदी और अंग्रेज़ी को स्वतंत्र समीक्षा की आवश्यकता है।' : 'Hindi and English need their own meaning and parity checks.'}</p></article>
+        <article><span class="principle-number">03</span><h3>{isHindi ? 'परंपराओं का सम्मान' : 'Respect for diversity'}</h3><p>{isHindi ? 'विशिष्ट परंपराओं की व्याख्या को सार्वभौमिक तथ्य की तरह प्रस्तुत नहीं किया जाता।' : 'Tradition-specific interpretations are not presented as universal claims.'}</p></article>
+        <article><span class="principle-number">04</span><h3>{isHindi ? 'समीक्षा से पहले प्रकाशन नहीं' : 'Review before publication'}</h3><p>{isHindi ? 'समीक्षा प्रारूप और स्वीकृत सामग्री के बीच स्पष्ट अंतर रखा जाता है।' : 'Review drafts remain distinct from formally approved release content.'}</p></article>
+      </div>
     </section>
   </main>
+  <script is:inline>
+    (() => {
+      const input = document.getElementById('library-search');
+      const cards = Array.from(document.querySelectorAll('[data-search]'));
+      const noResults = document.getElementById('no-results');
+      const count = document.getElementById('search-count');
+      if (!input) return;
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLocaleLowerCase();
+        let visible = 0;
+        cards.forEach((card) => {
+          const match = !query || card.dataset.search.includes(query);
+          card.hidden = !match;
+          if (match) visible += 1;
+        });
+        if (noResults) noResults.hidden = visible > 0;
+        if (count) count.textContent = visible + (document.documentElement.lang === 'hi' ? ' लेख उपलब्ध' : ' articles found');
+      });
+    })();
+  </script>
 </BaseLayout>

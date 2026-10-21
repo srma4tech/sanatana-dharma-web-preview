@@ -1,94 +1,77 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import reviewData from '../data/review-preview-content.json';
+const featured = reviewData.items || [];
 ---
 <BaseLayout
-  title="Sanātana Dharma — Explore with devotion, understand with context"
-  description="A bilingual Hindi-English knowledge and devotion platform for exploring Sanātana Dharma with respect, context, and transparent source review."
+  title="Sanātana Dharma — Knowledge, context, and devotion"
+  description="Explore Sanātana Dharma through a growing bilingual library, thoughtful context, and visible source references."
 >
-  <main id="main" class="home-page">
-    <section class="hero" aria-labelledby="hero-title">
+  <main id="main" class="home-page home-page-redesign">
+    <div class="review-banner home-review-banner" role="note">
+      <span class="review-banner-mark" aria-hidden="true">✦</span>
+      <div><strong>Owner review preview</strong><p>The first Shiva collection is available to explore. Articles are drafts for review, not yet approved for publication; source status is shown on each article.</p></div>
+      <a href={import.meta.env.BASE_URL + 'en/'}>Explore library <span aria-hidden="true">→</span></a>
+    </div>
+
+    <section class="hero hero-redesign" aria-labelledby="hero-title">
       <div class="hero-copy-block">
-        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> Hindi · English · Evidence-led</p>
-        <h1 id="hero-title">A living tradition.<br /><span>A thoughtful way to explore.</span></h1>
-        <p class="hero-copy">Explore Sanātana Dharma through its deities, scriptures, stories, philosophy, sacred places, and devotional traditions—with respect for diversity and honesty about sources.</p>
+        <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true">✦</span> ज्ञान · संदर्भ · भक्ति · Knowledge · Context · Devotion</p>
+        <h1 id="hero-title">A living tradition.<br /><span>Explore it thoughtfully.</span></h1>
+        <p class="hero-copy">Discover the ideas, texts, symbols, sacred places, and devotional traditions of Sanātana Dharma—with room for diverse perspectives and honesty about what the sources can tell us.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href={import.meta.env.BASE_URL + 'en/'}>Explore the library <span aria-hidden="true">→</span></a>
+          <a class="button button-primary" href={import.meta.env.BASE_URL + 'en/'}>Explore the knowledge library <span aria-hidden="true">→</span></a>
           <a class="button button-secondary" href={import.meta.env.BASE_URL + 'hi/'} lang="hi">हिन्दी में पढ़ें</a>
         </div>
-        <p class="hero-note"><span class="status-dot status-dot-progress" aria-hidden="true"></span> The platform is in active development. Articles are published only after source verification and review in both languages.</p>
+        <div class="hero-trust-row"><span><span class="trust-check" aria-hidden="true">✓</span> Hindi + English</span><span><span class="trust-check" aria-hidden="true">✓</span> Visible sources</span><span><span class="trust-check" aria-hidden="true">✓</span> Tradition-aware context</span></div>
       </div>
-      <aside class="hero-panel" aria-label="Platform commitments">
-        <div class="hero-panel-top"><span class="om-mark" aria-hidden="true">ॐ</span><span class="panel-label">Our commitment</span></div>
-        <p class="panel-quote">Reverence without exaggeration. Knowledge without guesswork.</p>
-        <div class="panel-rule"></div>
-        <ul class="commitment-list">
-          <li><span aria-hidden="true">✓</span> Source-aware learning</li>
-          <li><span aria-hidden="true">✓</span> Hindi and English together</li>
-          <li><span aria-hidden="true">✓</span> Traditions presented with context</li>
-        </ul>
+      <aside class="hero-art-panel" aria-label="Shiva learning collection">
+        <img class="hero-art-image" src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/39328/154124/main-image" alt="Bronze sculpture of Shiva as Nataraja dancing within a ring of flames." loading="lazy" />
+        <p class="hero-art-credit">Artwork: The Metropolitan Museum of Art · <a href="https://www.metmuseum.org/art/collection/search/39328" target="_blank" rel="noopener noreferrer">Public-domain collection record</a></p>
+        <p class="hero-art-kicker">THE FIRST COLLECTION</p>
+        <h2>Begin with Shiva</h2>
+        <p>Explore names, forms, symbols, and the many contexts in which Shiva is understood.</p>
+        <a href={import.meta.env.BASE_URL + 'en/shiva-overview/'}>Read the introduction <span aria-hidden="true">↗</span></a>
       </aside>
     </section>
 
-    <section id="progress" class="section-block" aria-labelledby="progress-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Project status</p><h2 id="progress-title">What is ready—and what comes next</h2></div>
-        <p class="section-intro">We share progress openly. A completed technical feature does not mean its religious content is already verified or published.</p>
-      </div>
-      <div class="status-grid">
-        <article class="status-card status-card-complete">
-          <div class="status-card-head"><span class="status-icon" aria-hidden="true">✓</span><span class="status-badge status-badge-complete">Completed</span></div>
-          <h3>Bilingual site foundation</h3>
-          <p>English and Hindi library routes, responsive page structure, and accessible navigation are in place.</p>
-        </article>
-        <article class="status-card status-card-complete">
-          <div class="status-card-head"><span class="status-icon" aria-hidden="true">✓</span><span class="status-badge status-badge-complete">Completed</span></div>
-          <h3>Evidence and publishing safeguards</h3>
-          <p>Content is designed to require identifiable sources, independent language review, and explicit approval before release.</p>
-        </article>
-        <article class="status-card status-card-progress">
-          <div class="status-card-head"><span class="status-icon" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></div>
-          <h3>Reading experience and section layouts</h3>
-          <p>We are improving the mobile-first interface and preparing clear entry points for each learning area.</p>
-        </article>
-        <article class="status-card status-card-progress">
-          <div class="status-card-head"><span class="status-icon" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></div>
-          <h3>First Shiva learning collection</h3>
-          <p>The first research batch is being prepared. Articles will appear only after evidence checks and Hindi-English review.</p>
-        </article>
+    <section class="home-collection section-block" aria-labelledby="collection-title">
+      <div class="section-heading"><div><p class="eyebrow">Curated learning</p><h2 id="collection-title">A library built for meaningful discovery</h2></div><p class="section-intro">Start with an accessible introduction, follow the sources, and continue into related topics at your own pace.</p></div>
+      <div class="home-topic-grid">
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/'}><span class="home-topic-symbol" aria-hidden="true">ॐ</span><span><strong>Deities & forms</strong><small>Names, attributes, visual forms, and traditions</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/rudra-shiva-terminology/'}><span class="home-topic-symbol" aria-hidden="true">ग्र</span><span><strong>Texts & terminology</strong><small>Read names and concepts within their textual context</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'en/shiva-iconography-symbols/'}><span class="home-topic-symbol" aria-hidden="true">◉</span><span><strong>Symbols & sacred art</strong><small>Understand selected images through object-specific sources</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
+        <a class="home-topic-card" href={import.meta.env.BASE_URL + 'hi/'}><span class="home-topic-symbol" aria-hidden="true">अ</span><span><strong>हिन्दी ज्ञान संग्रह</strong><small>Explore the same collection in Hindi</small></span><span class="home-topic-arrow" aria-hidden="true">↗</span></a>
       </div>
     </section>
 
-    <section id="sections" class="section-block section-tinted" aria-labelledby="sections-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Explore the knowledge map</p><h2 id="sections-title">Many paths into the tradition</h2></div>
-        <p class="section-intro">These learning areas are being built in stages. Their status describes the website section—not a claim that articles are already published.</p>
+    <section class="home-featured section-block" aria-labelledby="featured-title">
+      <div class="section-heading"><div><p class="eyebrow">The Shiva collection</p><h2 id="featured-title">Three starting points</h2></div><a class="text-link" href={import.meta.env.BASE_URL + 'en/'}>View the library <span aria-hidden="true">→</span></a></div>
+      <div class="home-article-grid">
+        {featured.map((item: any, index: number) => <article class="home-article-card">
+          <div class={`article-card-art article-art-${index + 1}`} aria-hidden="true"><span>{index === 0 ? 'ॐ' : index === 1 ? 'रु' : 'नृ'}</span><i></i></div>
+          <div class="home-article-copy"><div class="article-card-top"><span class="card-type">{item.type.replaceAll('-', ' ')}</span><span class="status-badge status-badge-review">Review draft</span></div>
+            <h3><a href={import.meta.env.BASE_URL + 'en/' + item.slug + '/'}>{item.locales.en.title}</a></h3>
+            <p>{item.locales.en.summary}</p>
+            <div class="article-card-footer"><span>{item.sourceReferences.length} source references</span><a href={import.meta.env.BASE_URL + 'en/' + item.slug + '/'}>Read article <span aria-hidden="true">→</span></a></div>
+          </div>
+        </article>)}
       </div>
-      <div class="topic-grid">
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">ॐ</span><span class="topic-card-copy"><strong>Deities &amp; forms</strong><span>Names, attributes, narratives, and traditions</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">ग्र</span><span class="topic-card-copy"><strong>Scriptures &amp; texts</strong><span>Reading guides, context, and source references</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">कथा</span><span class="topic-card-copy"><strong>Stories &amp; narratives</strong><span>Accounts with their textual and regional context</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">◉</span><span class="topic-card-copy"><strong>Philosophy &amp; traditions</strong><span>Concepts, schools, and differing interpretations</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">दीप</span><span class="topic-card-copy"><strong>Devotion, festivals &amp; practice</strong><span>Careful context for observances and devotional life</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">⌖</span><span class="topic-card-copy"><strong>Temples &amp; sacred places</strong><span>Traditions, geography, and documented history</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-        <article class="topic-card"><span class="topic-symbol" aria-hidden="true">↗</span><span class="topic-card-copy"><strong>Guided learning &amp; glossary</strong><span>Beginner paths and clear explanations of key terms</span></span><span class="topic-arrow" aria-hidden="true">↗</span><span class="status-badge status-badge-progress">In progress</span></article>
-      </div>
-      <p class="section-footnote">No articles are currently approved for publication. <a href="/en/">Visit the library status page</a> for the latest availability.</p>
     </section>
 
-    <section id="principles" class="section-block principles-section" aria-labelledby="principles-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">How we work</p><h2 id="principles-title">Respect the tradition. Be honest about evidence.</h2></div>
-      </div>
-      <div class="principle-grid">
-        <article><span class="principle-number">01</span><h3>Sources are visible</h3><p>Material claims should point to identifiable sources and precise locations. Uncertainty is disclosed, never filled with guesswork.</p></article>
-        <article><span class="principle-number">02</span><h3>Both languages matter</h3><p>Hindi and English receive separate language and subject review before an item can be published.</p></article>
-        <article><span class="principle-number">03</span><h3>Differences are respected</h3><p>Textual, historical, scholarly, and tradition-specific claims are distinguished instead of being blended into one universal account.</p></article>
-        <article><span class="principle-number">04</span><h3>Practice is handled carefully</h3><p>Initiation-restricted mantra text and operational ritual instructions are not published as open how-to content.</p></article>
+    <section class="home-editorial section-block" aria-labelledby="editorial-title">
+      <div class="editorial-intro"><p class="eyebrow">Our editorial promise</p><h2 id="editorial-title">Respect the tradition.<br /><span>Be honest about evidence.</span></h2><p>Sanātana Dharma contains many texts, schools, communities, and ways of understanding the sacred. A good learning resource should honour that breadth rather than flatten it into one simple story.</p><a class="text-link" href={import.meta.env.BASE_URL + 'en/#editorial-title'}>How we approach sources <span aria-hidden="true">→</span></a></div>
+      <div class="editorial-principles">
+        <article><span class="principle-number">01</span><div><h3>Sources are visible</h3><p>Each reference shows what it can support—and where verification remains open.</p></div></article>
+        <article><span class="principle-number">02</span><div><h3>Traditions keep their context</h3><p>Specific interpretations are attributed instead of presented as universal.</p></div></article>
+        <article><span class="principle-number">03</span><div><h3>Hindi and English both matter</h3><p>Meaning and parity need attention in both languages, not just literal translation.</p></div></article>
+        <article><span class="principle-number">04</span><div><h3>Review status stays clear</h3><p>Drafts, verified claims, and approved releases are kept distinct.</p></div></article>
       </div>
     </section>
-    <section class="closing-band" aria-labelledby="closing-title">
-      <div><p class="eyebrow">Start exploring</p><h2 id="closing-title">A careful library, built one verified step at a time.</h2></div>
-      <div class="closing-actions"><a class="button button-light" href="/en/">Open English library →</a><a class="button button-outline-light" href="/hi/" lang="hi">हिन्दी संग्रह खोलें →</a></div>
+
+    <section class="closing-band closing-band-redesign" aria-labelledby="closing-title">
+      <div><p class="eyebrow">Your learning journey starts here</p><h2 id="closing-title">Explore with curiosity.<br />Read with context.</h2><p>Begin with the Shiva collection in English or Hindi.</p></div>
+      <div class="closing-actions"><a class="button button-light" href={import.meta.env.BASE_URL + 'en/'}>Explore in English <span aria-hidden="true">→</span></a><a class="button button-outline-light" href={import.meta.env.BASE_URL + 'hi/'} lang="hi">हिन्दी में पढ़ें</a></div>
     </section>
   </main>
 </BaseLayout>
