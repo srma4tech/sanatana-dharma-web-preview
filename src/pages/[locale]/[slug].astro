@@ -1,75 +1,92 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import contentData from '../../data/published-content.json';
+import reviewData from '../../data/review-preview-content.json';
 import { getPublishedContent } from '../../lib/published-content.js';
 
 export function getStaticPaths() {
-  return (['en', 'hi'] as const).flatMap((locale) =>
-    getPublishedContent(contentData, locale)
-      .filter((item: any) => typeof item.slug === 'string' && item.slug.trim())
-      .map((item: any) => ({
+  return (['en', 'hi'] as const).flatMap((locale) => {
+    const published = getPublishedContent(contentData, locale).map((item: any) => ({ item, isReviewDraft: false }));
+    const drafts = (reviewData.items || []).map((item: any) => ({ item, isReviewDraft: true }));
+    return [...drafts, ...published]
+      .filter(({ item }: any) => typeof item.slug === 'string' && item.slug.trim())
+      .map(({ item, isReviewDraft }: any) => ({
         params: { locale, slug: item.slug },
-        props: { item, locale }
-      }))
-  );
+        props: { item, locale, isReviewDraft }
+      }));
+  });
 }
 
-const { item } = Astro.props;
+const { item, isReviewDraft } = Astro.props;
 const locale = Astro.props.locale === 'hi' ? 'hi' : 'en';
 const localized = item.locales[locale];
 const isHindi = locale === 'hi';
 const title = localized.seoTitle || localized.title;
 const description = localized.seoDescription || localized.summary;
 const sourceReferences: Array<any> = item.sourceReferences || [];
+const relatedItems = (item.related || [])
+  .map((slug: string) => (reviewData.items || []).find((candidate: any) => candidate.slug === slug))
+  .filter((candidate: any) => candidate && candidate.locales?.[locale]);
 ---
 <BaseLayout title={`${title} — Sanātana Dharma`} description={description} lang={locale}>
-  <main id="main" class="article-page">
+  <main id="main" class="article-page article-page-redesign">
+    {isReviewDraft && <div class="review-banner review-banner-article" role="note"><span class="review-banner-mark" aria-hidden="true">✦</span><div><strong>{isHindi ? 'प्रारूप — संपादकीय समीक्षा आवश्यक' : 'Review draft — editorial review required'}</strong><p>{isHindi ? 'यह सामग्री समीक्षा के लिए है, प्रकाशन की स्वीकृति नहीं। स्रोत-स्थिति को प्रत्येक संदर्भ के साथ देखें।' : 'This article is provided for review, not as publication approval. Check the status attached to each source reference.'}</p></div></div>}
     <nav class="breadcrumbs" aria-label={isHindi ? 'पृष्ठ स्थान' : 'Breadcrumb'}>
       <a href={import.meta.env.BASE_URL + locale + '/'}>{isHindi ? 'ज्ञान संग्रह' : 'Knowledge library'}</a>
       <span aria-hidden="true">/</span>
       <span aria-current="page">{localized.title}</span>
     </nav>
     <article>
-      <header class="article-header">
-        <p class="eyebrow">{item.type.replaceAll('-', ' ')}</p>
+      <header class="article-header article-header-redesign">
+        <p class="eyebrow">{isHindi ? 'शिव ज्ञान-संग्रह' : 'Shiva learning collection'} · {item.type.replaceAll('-', ' ')}</p>
         <h1>{localized.title}</h1>
         <p class="article-summary">{localized.summary}</p>
+        <div class="article-meta-row"><span class="article-meta-item"><span aria-hidden="true">◉</span> {isHindi ? 'द्विभाषी लेख' : 'Bilingual article'}</span><span class="article-meta-item"><span aria-hidden="true">↗</span> {sourceReferences.length} {isHindi ? 'स्रोत-संदर्भ' : 'source references'}</span><span class={isReviewDraft ? 'status-badge status-badge-review' : 'status-badge status-badge-complete'}>{isReviewDraft ? (isHindi ? 'समीक्षा प्रारूप' : 'Review draft') : (isHindi ? 'प्रकाशित' : 'Published')}</span></div>
         <nav class="language-switch" aria-label={isHindi ? 'भाषा चुनें' : 'Choose language'}>
           {item.locales.en && <a href={import.meta.env.BASE_URL + 'en/' + item.slug + '/'} lang="en">English</a>}
           {item.locales.hi && <a href={import.meta.env.BASE_URL + 'hi/' + item.slug + '/'} lang="hi">हिन्दी</a>}
         </nav>
       </header>
-      <div class="article-body">
-        {localized.body.map((section: any) => (
-          <section id={section.id} aria-labelledby={`heading-${section.id}`}>
-            <h2 id={`heading-${section.id}`}>{section.heading}</h2>
-            {section.blocks.map((block: any) => {
-              if (block.kind === 'list') return <div class="content-list"><p>{block.text}</p><ul>{(block.items || []).map((entry: string) => <li>{entry}</li>)}</ul></div>;
-              if (block.kind === 'callout') return <aside class="content-callout"><p>{block.text}</p></aside>;
-              if (block.kind === 'note') return <aside class="content-note"><p>{block.text}</p></aside>;
-              if (block.kind === 'quote' || block.kind === 'verse') return <blockquote><p>{block.text}</p>{block.attribution && <cite>{block.attribution}</cite>}</blockquote>;
-              return <p>{block.text}</p>;
-            })}
-          </section>
-        ))}
+      <div class="article-layout">
+        <div class="article-body">
+          {localized.body.map((section: any) => (
+            <section id={section.id} aria-labelledby={`heading-${section.id}`}>
+              <h2 id={`heading-${section.id}`}>{section.heading}</h2>
+              {section.blocks.map((block: any) => {
+                if (block.kind === 'list') return <div class="content-list"><p>{block.text}</p><ul>{(block.items || []).map((entry: string) => <li>{entry}</li>)}</ul></div>;
+                if (block.kind === 'callout') return <aside class="content-callout"><p>{block.text}</p></aside>;
+                if (block.kind === 'note') return <aside class="content-note"><p>{block.text}</p></aside>;
+                if (block.kind === 'quote' || block.kind === 'verse') return <blockquote><p>{block.text}</p>{block.attribution && <cite>{block.attribution}</cite>}</blockquote>;
+                return <p>{block.text}</p>;
+              })}
+            </section>
+          ))}
+        </div>
+        <aside class="article-aside">
+          <p class="eyebrow">{isHindi ? 'इस लेख में' : 'In this article'}</p>
+          <nav class="article-toc" aria-label={isHindi ? 'लेख विषय-सूची' : 'Article contents'}>
+            {localized.body.map((section: any) => <a href={`#${section.id}`}>{section.heading}</a>)}
+          </nav>
+          <div class="aside-note"><strong>{isHindi ? 'पढ़ने का सुझाव' : 'Reading note'}</strong><p>{isHindi ? 'विशिष्ट ऐतिहासिक या धार्मिक दावों को उनके संदर्भ और स्रोत की सीमा में समझें।' : 'Read historical and religious claims within the scope and limits of their cited sources.'}</p></div>
+        </aside>
       </div>
       {sourceReferences.length > 0 && (
-        <section class="source-list" aria-labelledby="sources-heading">
-          <h2 id="sources-heading">{isHindi ? 'स्रोत और सत्यापन' : 'Sources and verification'}</h2>
-          <p>{isHindi ? 'नीचे दिए गए स्रोत लेख के दावों के संदर्भ हैं।' : 'The following source records support claims made in this article.'}</p>
-          <ol>
+        <section class="source-list source-list-redesign" aria-labelledby="sources-heading">
+          <div class="section-heading"><div><p class="eyebrow">{isHindi ? 'पारदर्शिता' : 'Transparency'}</p><h2 id="sources-heading">{isHindi ? 'स्रोत और सत्यापन स्थिति' : 'Sources & verification status'}</h2></div><p class="section-intro">{isHindi ? 'स्रोत का उल्लेख अपने आप यह सिद्ध नहीं करता कि हर दावा सत्यापित है।' : 'A citation alone does not mean every claim has been verified.'}</p></div>
+          <ol class="source-reference-list">
             {sourceReferences.map((reference: any) => (
               <li>
-                <strong>{reference.source?.title || reference.sourceId}</strong>
-                {reference.source?.creators?.length > 0 && <span> — {reference.source.creators.join(', ')}</span>}
-                {reference.locator && <p>{isHindi ? 'संदर्भ:' : 'Locator:'} {reference.locator}</p>}
+                <div class="source-reference-title"><strong>{reference.source?.title || reference.sourceId}</strong><span class="status-badge status-badge-review">{isHindi ? 'स्थिति: समीक्षा जारी' : 'Review status'}</span></div>
+                {reference.locator && <p><strong>{isHindi ? 'संदर्भ:' : 'Locator:'}</strong> {reference.locator}</p>}
                 {reference.claimSummary && <p>{reference.claimSummary}</p>}
-                {reference.source?.url && <p><a href={reference.source.url} rel="noopener noreferrer">{isHindi ? 'स्रोत खोलें' : 'Open source'}</a></p>}
+                {reference.verificationStatus && <p class="source-status-line"><strong>{isHindi ? 'स्रोत स्थिति:' : 'Source status:'}</strong> {reference.verificationStatus}</p>}
+                {reference.source?.url && <p><a href={reference.source.url} target="_blank" rel="noopener noreferrer">{isHindi ? 'मूल स्रोत खोलें' : 'Open original source'} <span aria-hidden="true">↗</span></a></p>}
               </li>
             ))}
           </ol>
         </section>
       )}
+      {relatedItems.length > 0 && <section class="related-section"><div class="section-heading"><div><p class="eyebrow">{isHindi ? 'आगे पढ़ें' : 'Continue exploring'}</p><h2>{isHindi ? 'संबंधित लेख' : 'Related reading'}</h2></div></div><div class="library-grid">{relatedItems.map((related: any) => <article class="library-card"><span class="status-badge status-badge-review">{isHindi ? 'समीक्षा प्रारूप' : 'Review draft'}</span><h3><a href={import.meta.env.BASE_URL + locale + '/' + related.slug + '/'}>{related.locales[locale].title}</a></h3><p>{related.locales[locale].summary}</p></article>)}</div></section>}
     </article>
   </main>
 </BaseLayout>
