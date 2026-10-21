@@ -1,6 +1,6 @@
 {
   "releaseStatus": "review-preview-only",
-  "note": "Owner review preview only. These records are copied from non-canonical drafts and are not approved for public publication. This dataset is separate from the validated release dataset and must never be used as a production release.",
+  "note": "Owner review preview only. These eight bilingual Shiva foundation records are copied from non-canonical drafts and are not approved for public publication. This dataset is separate from the validated release dataset and must never be used as a production release.",
   "items": [
     {
       "id": "deity-shiva",
@@ -477,6 +477,706 @@
         "sourceUrl": "https://www.metmuseum.org/art/collection/search/39328",
         "rights": "Public-domain image, as indicated by The Metropolitan Museum of Art."
       }
+    },
+    {
+      "id": "concept-shiva-shakti-relationship",
+      "slug": "shiva-shakti-relationship",
+      "type": "concept-article",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "Shiva and Shakti: relationship and perspectives",
+          "summary": "An introductory guide to Shiva–Shakti relationships across selected Hindu traditions, with care not to present one theological interpretation as universal.",
+          "body": [
+            {
+              "id": "more-than-one-framework",
+              "heading": "More than one framework",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shiva and Shakti are understood through several theological and devotional frameworks. In some traditions, Shakti is described as divine power inseparable from Shiva; in Shakta traditions, the Goddess or divine power may be understood as ultimate reality. These descriptions belong to particular traditions and should not be blended into a single formula that claims to represent every Hindu community."
+                }
+              ]
+            },
+            {
+              "id": "forms-and-symbols",
+              "heading": "Relationship expressed through forms",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Some visual forms invite reflection on the relationship between masculine and feminine principles. Ardhanarishvara, for example, is commonly discussed as a composite form combining Shiva and the Goddess; its interpretation must be grounded in a specific art-historical or tradition-specific source. A single image cannot establish one universal doctrine for all traditions."
+                }
+              ]
+            },
+            {
+              "id": "reading-with-context",
+              "heading": "Read with context",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "When a text or teacher describes Shiva and Shakti, first identify the tradition, text, and context. Separate a tradition's own theological language from a modern scholarly description, and preserve differences where sources disagree. This introduction maps questions for further study; it does not settle every philosophical debate."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव और शक्ति: संबंध और दृष्टिकोण",
+          "summary": "चुनी हुई हिन्दू परंपराओं में शिव–शक्ति संबंध का प्रारंभिक परिचय, जिसमें किसी एक धार्मिक व्याख्या को सार्वभौमिक नहीं माना गया है।",
+          "body": [
+            {
+              "id": "more-than-one-framework",
+              "heading": "एक से अधिक दृष्टिकोण",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शिव और शक्ति को अनेक धार्मिक तथा भक्तिपरक दृष्टिकोणों से समझा जाता है। कुछ परंपराओं में शक्ति को शिव से अविभाज्य दिव्य सामर्थ्य के रूप में वर्णित किया जाता है; शाक्त परंपराओं में देवी या दिव्य शक्ति को परम सत्य माना जा सकता है। ये विवरण विशिष्ट परंपराओं से जुड़े हैं और इन्हें मिलाकर ऐसा एक सूत्र नहीं बनाना चाहिए जो हर हिन्दू समुदाय का प्रतिनिधित्व करने का दावा करे।"
+                }
+              ]
+            },
+            {
+              "id": "forms-and-symbols",
+              "heading": "स्वरूपों के माध्यम से व्यक्त संबंध",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "कुछ दृश्य-स्वरूप पुरुष और स्त्री सिद्धांतों के संबंध पर विचार करने का अवसर देते हैं। उदाहरण के लिए, अर्धनारीश्वर को प्रायः शिव और देवी के संयुक्त स्वरूप के रूप में समझा जाता है; इसकी व्याख्या किसी विशिष्ट कला-ऐतिहासिक या परंपरा-विशेष स्रोत पर आधारित होनी चाहिए। एक प्रतिमा सभी परंपराओं के लिए कोई सार्वभौमिक सिद्धांत सिद्ध नहीं करती।"
+                }
+              ]
+            },
+            {
+              "id": "reading-with-context",
+              "heading": "संदर्भ के साथ पढ़ें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "जब कोई ग्रंथ या आचार्य शिव और शक्ति का वर्णन करे, तो पहले परंपरा, ग्रंथ और संदर्भ की पहचान करें। किसी परंपरा की अपनी धार्मिक भाषा को आधुनिक शैक्षणिक वर्णन से अलग रखें और जहाँ स्रोतों में मतभेद हों, उन्हें बनाए रखें। यह परिचय आगे अध्ययन के प्रश्नों का मानचित्र देता है; यह हर दार्शनिक विवाद का अंतिम निर्णय नहीं है।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shiva-overview",
+        "shiva-iconography-symbols"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHAKTA-001",
+          "source": {
+            "title": "Shaktism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507007"
+          },
+          "locator": "Oxford Academic, Extract → Introduction; exact claim-level locator to be confirmed",
+          "claimSummary": "Scholarly overview of Shaktism and concepts of Shakti; does not establish a single universal Shiva–Shakti doctrine.",
+          "verificationStatus": "candidate-source; accessible introduction found; exact claim mapping and review pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Oxford Academic, Extract → Introduction; exact claim-level locator to be confirmed",
+          "claimSummary": "Scholarly framing of Shiva's significance and diversity of traditions.",
+          "verificationStatus": "candidate-source; accessible introduction found; claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-002",
+          "source": {
+            "title": "The Cave of Shiva at Elephanta — Smarthistory",
+            "url": "https://smarthistory.org/elephanta/"
+          },
+          "locator": "Smarthistory Elephanta article; paragraph-level locator pending",
+          "claimSummary": "Site-specific art-historical discussion of selected Shiva-related sculptural forms.",
+          "verificationStatus": "candidate-source; exact section and claim locator pending",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Research draft only. Source links are candidates or scoped references; no claim is marked verified, and no review or publication approval is implied."
+    },
+    {
+      "id": "deity-selected-shiva-forms",
+      "slug": "selected-shiva-forms",
+      "type": "deity-profile",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "Selected forms of Shiva",
+          "summary": "A context-first introduction to selected forms of Shiva in art and tradition, without treating one image or regional tradition as universal.",
+          "body": [
+            {
+              "id": "forms-in-context",
+              "heading": "Forms belong to contexts",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shiva appears in many visual and devotional forms. Their names, attributes, and meanings can vary with the text, region, period, and community. A responsible guide identifies the particular form and source being discussed rather than presenting a short list as a complete account of Shiva."
+                }
+              ]
+            },
+            {
+              "id": "nataraja",
+              "heading": "Shiva as Nataraja",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Nataraja, Shiva as Lord of Dance, is represented in well-known South Indian bronze sculpture traditions. The Metropolitan Museum of Art's record for one Chola-period copper-alloy sculpture describes its date, material, and specific iconographic interpretation. Those details belong to that object record; they should not automatically be applied to every Nataraja image."
+                }
+              ]
+            },
+            {
+              "id": "elephanta-forms",
+              "heading": "Forms at Elephanta",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "The Elephanta Caves contain a sculptural programme associated with Shiva, including large panels commonly discussed in art-historical descriptions. The UNESCO site record and specialist art-history writing should be used for claims about this specific place. Site descriptions do not by themselves define how all devotees interpret the represented forms."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव के चुने हुए स्वरूप",
+          "summary": "कला और परंपरा में शिव के कुछ चुने हुए स्वरूपों का संदर्भ-आधारित परिचय, जिसमें किसी एक प्रतिमा या क्षेत्रीय परंपरा को सार्वभौमिक नहीं माना गया है।",
+          "body": [
+            {
+              "id": "forms-in-context",
+              "heading": "स्वरूप अपने संदर्भ में समझें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शिव के अनेक दृश्य और भक्तिपरक स्वरूप मिलते हैं। उनके नाम, विशेषताएँ और अर्थ ग्रंथ, क्षेत्र, काल तथा समुदाय के अनुसार बदल सकते हैं। एक जिम्मेदार मार्गदर्शिका किसी विशेष स्वरूप और संबंधित स्रोत की पहचान करती है; वह छोटी-सी सूची को शिव का संपूर्ण विवरण नहीं बताती।"
+                }
+              ]
+            },
+            {
+              "id": "nataraja",
+              "heading": "नटराज के रूप में शिव",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "नटराज, अर्थात नृत्य के अधिपति शिव, दक्षिण भारतीय कांस्य-मूर्तिकला की प्रसिद्ध परंपराओं में दर्शाए जाते हैं। मेट्रोपॉलिटन म्यूज़ियम ऑफ़ आर्ट के चोल-कालीन ताम्र-मिश्र धातु की एक प्रतिमा के विवरण में उसकी तिथि, सामग्री और विशिष्ट प्रतीकात्मक व्याख्या दी गई है। ये विवरण उसी कलाकृति से संबंधित हैं; इन्हें हर नटराज प्रतिमा पर स्वतः लागू नहीं करना चाहिए।"
+                }
+              ]
+            },
+            {
+              "id": "elephanta-forms",
+              "heading": "एलिफेंटा में शिव के स्वरूप",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "एलिफेंटा की गुफाओं में शिव से संबंधित मूर्तिकला-समूह है, जिसमें बड़े मूर्तिकला-पट्ट शामिल हैं जिनकी कला-ऐतिहासिक विवरणों में चर्चा होती है। इस विशिष्ट स्थल के बारे में दावों के लिए यूनेस्को का स्थल-विवरण और विशेषज्ञ कला-इतिहास लेखन उपयोग करना चाहिए। किसी स्थल का विवरण अपने आप यह निर्धारित नहीं करता कि सभी भक्त उन स्वरूपों की व्याख्या कैसे करते हैं।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shiva-iconography-symbols",
+        "shiva-shakti-relationship"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "MET-NATARAJA-1987-80-1",
+          "source": {
+            "title": "Shiva as Lord of Dance (Nataraja), object 1987.80.1 — The Metropolitan Museum of Art",
+            "url": "https://www.metmuseum.org/art/collection/search/39328"
+          },
+          "locator": "Artwork Details and Overview on the object record; confirm each field before release",
+          "claimSummary": "Object-specific date, material, and museum interpretation.",
+          "verificationStatus": "object page accessed; image marked public domain; final claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "ELEPHANTA-UNESCO",
+          "source": {
+            "title": "Elephanta Caves — UNESCO World Heritage Centre",
+            "url": "https://whc.unesco.org/en/list/244/"
+          },
+          "locator": "Brief synthesis; paragraph-level recheck required",
+          "claimSummary": "Heritage-site description and site-specific historical context.",
+          "verificationStatus": "candidate-source; exact claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "ELEPHANTA-SMARTHISTORY",
+          "source": {
+            "title": "The Cave of Shiva at Elephanta — Smarthistory",
+            "url": "https://smarthistory.org/elephanta/"
+          },
+          "locator": "Article section/paragraph locator pending",
+          "claimSummary": "Specialist art-historical discussion of selected sculptural forms at Elephanta.",
+          "verificationStatus": "candidate-source; exact claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Scholarly overview and diversity of Shiva-related traditions.",
+          "verificationStatus": "candidate-source; accessible introduction found; claim mapping pending",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Research draft only. Source links are candidates or scoped references; no claim is marked verified, and no review or publication approval is implied."
+    },
+    {
+      "id": "concept-shaiva-traditions-introduction",
+      "slug": "shaiva-traditions-introduction",
+      "type": "concept-article",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "An introduction to Shaiva traditions",
+          "summary": "A starting map of Shaiva traditions as a diverse family of devotional, philosophical, textual, and ritual communities.",
+          "body": [
+            {
+              "id": "plural-traditions",
+              "heading": "Shaivism is not one uniform system",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shaivism is a broad term for Hindu traditions centred on Shiva, but it includes distinct histories, texts, philosophies, practices, and regional expressions. Scholarship traces varied developments over time; the term should not be used to imply that all Shaiva communities share the same theology or ritual system."
+                }
+              ]
+            },
+            {
+              "id": "examples-not-exhaustive",
+              "heading": "Examples, not an exhaustive taxonomy",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Oxford Bibliographies discusses historical developments including the Pashupata movement and later forms of Shaivism, while separate scholarship treats traditions such as Shaiva Siddhanta. These examples have their own histories and cannot stand in for every Shaiva lineage or community. A fuller taxonomy requires specialist sources and careful regional coverage."
+                }
+              ]
+            },
+            {
+              "id": "how-to-compare",
+              "heading": "How to compare traditions fairly",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "When comparing traditions, identify the community, text, period, and practice being discussed. Distinguish a tradition's own account of itself from academic classification, and avoid ranking traditions as more or less authentic. Differences should be explained with sources rather than erased."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शैव परंपराओं का परिचय",
+          "summary": "भक्ति, दर्शन, ग्रंथ और अनुष्ठान से जुड़ी विविध शैव परंपराओं का प्रारंभिक मानचित्र।",
+          "body": [
+            {
+              "id": "plural-traditions",
+              "heading": "शैव परंपराएँ एक समान व्यवस्था नहीं हैं",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शैव परंपरा शिव-केंद्रित हिन्दू परंपराओं के लिए व्यापक शब्द है, लेकिन इसमें अलग-अलग इतिहास, ग्रंथ, दर्शन, साधनाएँ और क्षेत्रीय अभिव्यक्तियाँ शामिल हैं। शैक्षणिक अध्ययन समय के साथ हुए विविध विकासों का वर्णन करते हैं; इस शब्द का अर्थ यह नहीं लेना चाहिए कि सभी शैव समुदाय एक ही दर्शन या अनुष्ठान-पद्धति मानते हैं।"
+                }
+              ]
+            },
+            {
+              "id": "examples-not-exhaustive",
+              "heading": "उदाहरण, संपूर्ण वर्गीकरण नहीं",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "ऑक्सफ़ोर्ड बिब्लियोग्राफ़ीज़ में पाशुपत आंदोलन और शैव परंपराओं के बाद के रूपों सहित ऐतिहासिक विकासों की चर्चा है; वहीं अलग अध्ययन शैव सिद्धांत जैसी परंपराओं पर केंद्रित हैं। इन उदाहरणों का अपना इतिहास है और ये हर शैव वंश-परंपरा या समुदाय का प्रतिनिधित्व नहीं करते। अधिक विस्तृत वर्गीकरण के लिए विशेषज्ञ स्रोतों और क्षेत्रीय विविधता की सावधानीपूर्ण समीक्षा आवश्यक है।"
+                }
+              ]
+            },
+            {
+              "id": "how-to-compare",
+              "heading": "परंपराओं की निष्पक्ष तुलना कैसे करें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "परंपराओं की तुलना करते समय संबंधित समुदाय, ग्रंथ, काल और साधना की पहचान करें। किसी परंपरा की अपनी आत्म-व्याख्या को शैक्षणिक वर्गीकरण से अलग रखें और परंपराओं को अधिक या कम प्रामाणिक ठहराने से बचें। मतभेदों को स्रोतों के आधार पर समझाएँ, मिटाएँ नहीं।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "rudra-shiva-terminology",
+        "shiva-scripture-guide"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHAIVA-001",
+          "source": {
+            "title": "Shaivism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554516049"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Scholarly overview of Shaivism's historical development and diversity.",
+          "verificationStatus": "accessible introduction checked; detailed historical claims need precise locators and subject review",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SIDDHANTA-001",
+          "source": {
+            "title": "Shaiva Siddhanta — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554520322"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Specialist overview of Shaiva Siddhanta and its textual, ritual, and regional histories.",
+          "verificationStatus": "accessible introduction found; claim mapping and review pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Overview of Shiva-related traditions and regional diversity.",
+          "verificationStatus": "candidate-source; claim mapping pending",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Research draft only. Source links are candidates or scoped references; no claim is marked verified, and no review or publication approval is implied."
+    },
+    {
+      "id": "scripture-shiva-related-scripture-guide",
+      "slug": "shiva-scripture-guide",
+      "type": "scripture-profile",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "A guide to Shiva-related scriptures",
+          "summary": "A careful starting guide to the varied textual traditions used to study Shiva, with reminders to identify the text, edition, and tradition.",
+          "body": [
+            {
+              "id": "many-textual-layers",
+              "heading": "There is no single Shiva book",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Shiva-related understanding draws on different kinds of sources, including Vedic material discussing Rudra, Upanishadic and epic contexts, Puranic narratives, Agamic and Tantric textual traditions, and regional devotional literature. Their authority and role differ among communities. A guide should identify the source type rather than presenting these materials as one uniform canon."
+                }
+              ]
+            },
+            {
+              "id": "identify-edition",
+              "heading": "Identify the text and edition",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "For verse-level interpretation, record the work, section or verse, edition, editor or translator, and the exact passage consulted. A catalogue page or a source that merely names a hymn can help locate a text, but it does not by itself verify a translation or interpretation."
+                }
+              ]
+            },
+            {
+              "id": "reading-across-traditions",
+              "heading": "Read across traditions carefully",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "A source may be authoritative within one tradition without being treated identically elsewhere. Read translations with their notes and historical context, and distinguish the text itself from later commentary or a community's devotional interpretation. Where the evidence is incomplete, say so plainly."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव-संबंधी ग्रंथों की मार्गदर्शिका",
+          "summary": "शिव के अध्ययन में प्रयुक्त विविध ग्रंथ-परंपराओं की प्रारंभिक मार्गदर्शिका, जिसमें मूल पाठ, संस्करण और परंपरा की पहचान पर बल है।",
+          "body": [
+            {
+              "id": "many-textual-layers",
+              "heading": "शिव पर एक ही ग्रंथ नहीं है",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "शिव-संबंधी समझ के लिए अलग-अलग प्रकार के स्रोतों का उपयोग होता है, जिनमें रुद्र का उल्लेख करने वाली वैदिक सामग्री, उपनिषदों और महाकाव्यों के संदर्भ, पुराणिक आख्यान, आगमिक और तांत्रिक ग्रंथ-परंपराएँ तथा क्षेत्रीय भक्तिपरक साहित्य शामिल हैं। अलग-अलग समुदायों में इनका अधिकार और स्थान भिन्न हो सकता है। मार्गदर्शिका को स्रोत का प्रकार स्पष्ट करना चाहिए, न कि इन सभी को एक समान ग्रंथ-संग्रह बताना चाहिए।"
+                }
+              ]
+            },
+            {
+              "id": "identify-edition",
+              "heading": "ग्रंथ और संस्करण की पहचान करें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "श्लोक या मंत्र की व्याख्या के लिए ग्रंथ, खंड या श्लोक-संख्या, संस्करण, संपादक या अनुवादक और पढ़े गए सटीक अंश का विवरण दर्ज करें। किसी ग्रंथ-सूची का पृष्ठ या केवल सूक्त का नाम बताने वाला स्रोत पाठ खोजने में मदद कर सकता है, लेकिन वह अपने आप अनुवाद या व्याख्या को सत्यापित नहीं करता।"
+                }
+              ]
+            },
+            {
+              "id": "reading-across-traditions",
+              "heading": "परंपराओं को सावधानी से पढ़ें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "कोई स्रोत एक परंपरा में प्रामाणिक हो सकता है, जबकि अन्य परंपराओं में उसे उसी तरह न माना जाए। अनुवाद को उसकी टिप्पणियों और ऐतिहासिक संदर्भ के साथ पढ़ें तथा मूल पाठ को बाद की टीका या किसी समुदाय की भक्तिपरक व्याख्या से अलग रखें। जहाँ प्रमाण अधूरे हों, वहाँ इसे स्पष्ट रूप से बताएँ।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shaiva-traditions-introduction",
+        "beginner-shiva-learning-path"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Scholarly bibliography discussing Puranic, Agamic, archaeological, and regional research on Shiva.",
+          "verificationStatus": "accessible introduction checked; source-family mapping and review pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHAIVA-001",
+          "source": {
+            "title": "Shaivism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554516049"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Historical and textual context for varied Shaiva traditions.",
+          "verificationStatus": "accessible introduction found; claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SIDDHANTA-001",
+          "source": {
+            "title": "Shaiva Siddhanta — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554520322"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Example of a tradition-specific textual and ritual corpus.",
+          "verificationStatus": "accessible introduction found; claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "RUDRA-001",
+          "source": {
+            "title": "Rudra-Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554515949"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Scholarly discussion of Rudra and Shiva terminology and textual context.",
+          "verificationStatus": "accessible introduction found; verse-level claims remain out of scope",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Research draft only. Source links are candidates or scoped references; no claim is marked verified, and no review or publication approval is implied."
+    },
+    {
+      "id": "path-beginner-shiva-learning",
+      "slug": "beginner-shiva-learning-path",
+      "type": "learning-path",
+      "status": "review-draft",
+      "canonical": false,
+      "publicationStatus": "not-approved",
+      "collection": "foundation-shiva",
+      "locales": {
+        "en": {
+          "title": "A beginner's path through Shiva studies",
+          "summary": "A paced reading route through foundational concepts, symbols, traditions, and source literacy, with clear boundaries between introduction and specialist study.",
+          "body": [
+            {
+              "id": "start-with-overview",
+              "heading": "1. Begin with an overview",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Start with the Shiva overview to learn the scope of the collection and why Shiva-related traditions should be approached with attention to regional and theological diversity. Treat the overview as an orientation, not a complete account of every belief or practice."
+                }
+              ]
+            },
+            {
+              "id": "names-and-images",
+              "heading": "2. Explore names and visual forms",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "Read the Rudra–Shiva terminology article next, then explore the iconography article. When reading about a symbol or artwork, keep the source, period, region, and interpretive tradition visible. Do not assume that a museum description explains every devotee's understanding."
+                }
+              ]
+            },
+            {
+              "id": "traditions-and-texts",
+              "heading": "3. Move into traditions and texts",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "After the introductory articles, explore the overview of Shaiva traditions and the scripture guide. Compare sources by asking who uses them, in which context, and with what kind of authority. More specialised topics may require subject-matter guidance."
+                }
+              ]
+            },
+            {
+              "id": "read-responsibly",
+              "heading": "4. Practise source-aware reading",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "For every claim, check whether the cited source actually supports it and whether the statement is descriptive, traditional, historical, or interpretive. A source link is a starting point for verification, not a substitute for reading the source."
+                }
+              ]
+            }
+          ]
+        },
+        "hi": {
+          "title": "शिव-अध्ययन की शुरुआती यात्रा",
+          "summary": "मूल अवधारणाओं, प्रतीकों, परंपराओं और स्रोत-पठन से होकर गुजरने वाला क्रमबद्ध अध्ययन-पथ, जिसमें प्रारंभिक परिचय और विशेषज्ञ अध्ययन का अंतर स्पष्ट है।",
+          "body": [
+            {
+              "id": "start-with-overview",
+              "heading": "१. प्रारंभिक परिचय से शुरू करें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "संग्रह की सीमा समझने और यह जानने के लिए कि शिव-संबंधी परंपराओं को क्षेत्रीय तथा धार्मिक विविधता के साथ क्यों पढ़ना चाहिए, शिव-परिचय से शुरुआत करें। इस परिचय को दिशा-सूचक मानें, हर मान्यता या साधना का संपूर्ण विवरण नहीं।"
+                }
+              ]
+            },
+            {
+              "id": "names-and-images",
+              "heading": "२. नामों और दृश्य-स्वरूपों को समझें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "इसके बाद रुद्र–शिव नामों वाला लेख पढ़ें और फिर प्रतिमा-विज्ञान वाले लेख पर जाएँ। किसी प्रतीक या कलाकृति के बारे में पढ़ते समय स्रोत, काल, क्षेत्र और व्याख्यात्मक परंपरा को ध्यान में रखें। यह न मानें कि संग्रहालय का विवरण हर भक्त की समझ को समझा देता है।"
+                }
+              ]
+            },
+            {
+              "id": "traditions-and-texts",
+              "heading": "३. परंपराओं और ग्रंथों की ओर बढ़ें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "प्रारंभिक लेखों के बाद शैव परंपराओं के परिचय और ग्रंथ-मार्गदर्शिका की ओर बढ़ें। स्रोतों की तुलना करते समय पूछें कि उनका उपयोग कौन करता है, किस संदर्भ में करता है और उन्हें किस प्रकार का अधिकार प्राप्त है। अधिक विशिष्ट विषयों के लिए विषय-विशेषज्ञ का मार्गदर्शन आवश्यक हो सकता है।"
+                }
+              ]
+            },
+            {
+              "id": "read-responsibly",
+              "heading": "४. स्रोत-सचेत अध्ययन का अभ्यास करें",
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "text": "हर दावे के लिए जाँचें कि उद्धृत स्रोत वास्तव में उसका समर्थन करता है या नहीं और कथन वर्णनात्मक, परंपरागत, ऐतिहासिक या व्याख्यात्मक है। स्रोत का लिंक सत्यापन की शुरुआत है, स्रोत को पढ़ने का विकल्प नहीं।"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "related": [
+        "shiva-overview",
+        "rudra-shiva-terminology",
+        "shiva-iconography-symbols",
+        "shaiva-traditions-introduction",
+        "shiva-scripture-guide"
+      ],
+      "sourceReferences": [
+        {
+          "sourceId": "SHIVA-001",
+          "source": {
+            "title": "Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554507366"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Introductory scholarly map of Shiva-related study and diversity.",
+          "verificationStatus": "candidate-source; exact claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "SHAIVA-001",
+          "source": {
+            "title": "Shaivism — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554516049"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Introductory scholarly map of Shaiva traditions.",
+          "verificationStatus": "candidate-source; exact claim mapping pending",
+          "lastChecked": "2026-10-21"
+        },
+        {
+          "sourceId": "RUDRA-001",
+          "source": {
+            "title": "Rudra-Shiva — Oxford Bibliographies in Hinduism",
+            "url": "https://academic.oup.com/reference/62357/reference-article-abstract/554515949"
+          },
+          "locator": "Extract → Introduction; exact claim-level locator pending",
+          "claimSummary": "Terminology and historical reading context.",
+          "verificationStatus": "candidate-source; exact claim mapping pending",
+          "lastChecked": "2026-10-21"
+        }
+      ],
+      "editorialReview": {
+        "subjectMatter": "pending",
+        "english": "pending",
+        "hindi": "pending",
+        "sourceVerification": "pending",
+        "rights": "pending",
+        "publicationApproval": "pending"
+      },
+      "sourceNote": "Research draft only. Source links are candidates or scoped references; no claim is marked verified, and no review or publication approval is implied."
     }
   ]
 }
