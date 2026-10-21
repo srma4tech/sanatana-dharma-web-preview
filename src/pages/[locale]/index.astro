@@ -18,17 +18,15 @@ const description = isHindi
   ? 'शिव-केंद्रित अध्ययन संग्रह, स्रोत-संदर्भ और हिंदी-अंग्रेज़ी पठन अनुभव।'
   : 'Explore the Shiva learning collection with source references and bilingual reading.';
 const categories = isHindi ? [
-  { symbol: 'ॐ', title: 'देवता और स्वरूप', detail: 'शिव के चुने हुए रूप और संदर्भ', href: import.meta.env.BASE_URL + 'hi/selected-shiva-forms/' },
-  { symbol: 'ग्र', title: 'शास्त्र और ग्रंथ', detail: 'पाठ, संस्करण और स्रोत', href: import.meta.env.BASE_URL + 'hi/shiva-scripture-guide/' },
-  { symbol: '◉', title: 'दर्शन और परंपराएँ', detail: 'शैव परंपराओं की विविधता', href: import.meta.env.BASE_URL + 'hi/shaiva-traditions-introduction/' },
-  { symbol: 'शक्ति', title: 'शिव और शक्ति', detail: 'विविध धार्मिक दृष्टिकोण', href: import.meta.env.BASE_URL + 'hi/shiva-shakti-relationship/' },
-  { symbol: 'दीप', title: 'अध्ययन-मार्ग', detail: 'शुरुआत से स्रोत-सचेत पठन तक', href: import.meta.env.BASE_URL + 'hi/beginner-shiva-learning-path/' }
+  { symbol: 'ॐ', title: 'देवता और स्वरूप', detail: 'देव-परिचय, रूप और परंपराएँ', href: '#featured' },
+  { symbol: 'ग्र', title: 'शास्त्र और ग्रंथ', detail: 'पाठ, संदर्भ और स्रोत', href: '#principles' },
+  { symbol: '◉', title: 'दर्शन और परंपराएँ', detail: 'विचार और विविध दृष्टिकोण', href: '#principles' },
+  { symbol: 'दीप', title: 'भक्ति और आचरण', detail: 'संदर्भ सहित devotional अध्ययन', href: '#principles' }
 ] : [
-  { symbol: 'ॐ', title: 'Deities & forms', detail: 'Selected forms and their contexts', href: import.meta.env.BASE_URL + 'en/selected-shiva-forms/' },
-  { symbol: 'ग्र', title: 'Scriptures & texts', detail: 'Texts, editions, and references', href: import.meta.env.BASE_URL + 'en/shiva-scripture-guide/' },
-  { symbol: '◉', title: 'Philosophy & traditions', detail: 'The diversity of Shaiva traditions', href: import.meta.env.BASE_URL + 'en/shaiva-traditions-introduction/' },
-  { symbol: 'शक्ति', title: 'Shiva & Shakti', detail: 'Different theological perspectives', href: import.meta.env.BASE_URL + 'en/shiva-shakti-relationship/' },
-  { symbol: 'दीप', title: 'Guided learning', detail: 'From foundations to source-aware reading', href: import.meta.env.BASE_URL + 'en/beginner-shiva-learning-path/' }
+  { symbol: 'ॐ', title: 'Deities & forms', detail: 'Profiles, forms, and traditions', href: '#featured' },
+  { symbol: 'ग्र', title: 'Scriptures & texts', detail: 'Texts, context, and references', href: '#principles' },
+  { symbol: '◉', title: 'Philosophy & traditions', detail: 'Ideas and diverse perspectives', href: '#principles' },
+  { symbol: 'दीप', title: 'Devotion & practice', detail: 'Careful, contextual learning', href: '#principles' }
 ];
 ---
 <BaseLayout title={`${pageTitle} — Sanātana Dharma`} description={description} lang={locale}>
