@@ -6,7 +6,7 @@ This repository hosts the bilingual Hindi-English **owner review preview** of th
 
 - Knowledge-first homepage with the Shiva collection featured
 - English and Hindi library routes
-- Eight bilingual Shiva review articles: Shiva overview; Rudra and Shiva terminology; Shiva iconography and symbols; Shiva–Shakti relationship; selected Shiva forms; Shaiva traditions; a scripture guide; and a beginner learning path
+- Three bilingual Shiva review articles: Shiva overview, Rudra and Shiva terminology, and Shiva iconography and symbols
 - Article contents navigation, related reading, visible source references and source-status notes
 - Responsive layouts and user-controlled light/dark themes
 
