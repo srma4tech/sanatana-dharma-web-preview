@@ -23,7 +23,8 @@ const localized = item.locales[locale];
 const isHindi = locale === 'hi';
 const title = localized.seoTitle || localized.title;
 const description = localized.seoDescription || localized.summary;
-const sourceReferences: Array<any> = item.sourceReferences || [];\nconst heroImage = item.heroImage;
+const sourceReferences: Array<any> = item.sourceReferences || [];
+const heroImage = item.heroImage;
 const relatedItems = (item.related || [])
   .map((slug: string) => (reviewData.items || []).find((candidate: any) => candidate.slug === slug))
   .filter((candidate: any) => candidate && candidate.locales?.[locale]);
@@ -40,7 +41,8 @@ const relatedItems = (item.related || [])
       <header class="article-header article-header-redesign">
         <p class="eyebrow">{isHindi ? 'शिव ज्ञान-संग्रह' : 'Shiva learning collection'} · {item.type.replaceAll('-', ' ')}</p>
         <h1>{localized.title}</h1>
-        <p class="article-summary">{localized.summary}</p>\n        {heroImage && <figure class="article-hero-figure"><img src={heroImage.src} alt={heroImage.alt} loading="lazy" /><figcaption>{heroImage.caption} <a href={heroImage.sourceUrl} target="_blank" rel="noopener noreferrer">{isHindi ? 'संग्रहालय रिकॉर्ड' : 'Museum record'} ↗</a><span>{heroImage.rights}</span></figcaption></figure>}
+        <p class="article-summary">{localized.summary}</p>
+        {heroImage && <figure class="article-hero-figure"><img src={heroImage.src} alt={heroImage.alt} loading="lazy" /><figcaption>{heroImage.caption} <a href={heroImage.sourceUrl} target="_blank" rel="noopener noreferrer">{isHindi ? 'संग्रहालय रिकॉर्ड' : 'Museum record'} ↗</a><span>{heroImage.rights}</span></figcaption></figure>}
         <div class="article-meta-row"><span class="article-meta-item"><span aria-hidden="true">◉</span> {isHindi ? 'द्विभाषी लेख' : 'Bilingual article'}</span><span class="article-meta-item"><span aria-hidden="true">↗</span> {sourceReferences.length} {isHindi ? 'स्रोत-संदर्भ' : 'source references'}</span><span class={isReviewDraft ? 'status-badge status-badge-review' : 'status-badge status-badge-complete'}>{isReviewDraft ? (isHindi ? 'समीक्षा प्रारूप' : 'Review draft') : (isHindi ? 'प्रकाशित' : 'Published')}</span></div>
         <nav class="language-switch" aria-label={isHindi ? 'भाषा चुनें' : 'Choose language'}>
           {item.locales.en && <a href={import.meta.env.BASE_URL + 'en/' + item.slug + '/'} lang="en">English</a>}
