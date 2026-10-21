@@ -30,7 +30,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Install dependencies
+      - name: Install project dependencies
         run: npm install
       - name: Astro and TypeScript checks
         run: npm run check
