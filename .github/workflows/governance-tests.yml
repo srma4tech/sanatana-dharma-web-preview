@@ -1,6 +1,15 @@
 name: Governance tests
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - 'scripts/prepare-content-release.mjs'
+      - 'tests/**'
+      - 'src/data/published-content.json'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/governance-tests.yml'
   pull_request:
     branches: [master]
     paths:
