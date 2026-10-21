@@ -469,7 +469,14 @@
         "rights": "pending",
         "publicationApproval": "pending"
       },
-      "sourceNote": "Evidence keys refer to docs/research/deity-shiva-research.md. Museum interpretations remain attributed to their specific records; no image reuse rights are implied."
+      "sourceNote": "Evidence keys refer to docs/research/deity-shiva-research.md. Museum interpretations remain attributed to their specific records; no image reuse rights are implied.",
+      "heroImage": {
+        "src": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/39328/154124/main-image",
+        "alt": "Bronze sculpture of Shiva as Nataraja dancing within a ring of flames.",
+        "caption": "Shiva as Lord of Dance (Nataraja), copper alloy, Chola period; The Metropolitan Museum of Art, object 1987.80.1.",
+        "sourceUrl": "https://www.metmuseum.org/art/collection/search/39328",
+        "rights": "Public-domain image, as indicated by The Metropolitan Museum of Art."
+      }
     }
   ]
 }
