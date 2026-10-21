@@ -17,7 +17,16 @@ const isLibraryPage = Astro.url.pathname === '/en/' || Astro.url.pathname === '/
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#172d27" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem('sd-theme');
+        const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.dataset.theme = savedTheme || systemTheme;
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
     <title>{title}</title>
   </head>
   <body>
@@ -33,17 +42,47 @@ const isLibraryPage = Astro.url.pathname === '/en/' || Astro.url.pathname === '/
         <a href={import.meta.env.BASE_URL + (isHindi ? 'hi/' : 'en/')} aria-current={isLibraryPage ? 'page' : undefined}>{isHindi ? 'ज्ञान संग्रह' : 'Library'}</a>
         <span class="nav-divider" aria-hidden="true"></span>
         <a class="nav-language" href={import.meta.env.BASE_URL + (isHindi ? 'en/' : 'hi/')} lang={isHindi ? 'en' : 'hi'}>{isHindi ? 'English' : 'हिन्दी'}</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label={isHindi ? 'डार्क थीम चालू करें' : 'Switch to dark theme'}>
+          <span class="theme-toggle-icon" aria-hidden="true">◐</span>
+          <span data-theme-label>{isHindi ? 'डार्क मोड' : 'Dark mode'}</span>
+        </button>
       </nav>
     </header>
     <slot />
     <footer class="site-footer">
       <div class="footer-inner">
-        <a class="footer-brand" href="/"><span aria-hidden="true">ॐ</span> Sanātana Dharma</a>
+        <a class="footer-brand" href={import.meta.env.BASE_URL}><span aria-hidden="true">ॐ</span> Sanātana Dharma</a>
         <p>{isHindi
           ? 'सामग्री स्रोत-सत्यापन और संपादकीय समीक्षा के बाद ही प्रकाशित होगी।'
           : 'Content is published only after source verification and editorial review.'}</p>
         <div class="footer-links"><a href={import.meta.env.BASE_URL + 'en/'}>{isHindi ? 'अंग्रेज़ी संग्रह' : 'English library'}</a><a href={import.meta.env.BASE_URL + 'hi/'} lang="hi">{isHindi ? 'हिन्दी संग्रह' : 'Hindi library'}</a><a href={import.meta.env.BASE_URL + '#principles'}>{isHindi ? 'संपादकीय सिद्धांत' : 'Editorial principles'}</a></div>
       </div>
     </footer>
+    <script is:inline>
+      (() => {
+        const button = document.querySelector('[data-theme-toggle]');
+        const label = document.querySelector('[data-theme-label]');
+        if (!button || !label) return;
+        const hindi = document.documentElement.lang === 'hi';
+        const applyTheme = (theme) => {
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.style.colorScheme = theme;
+          const dark = theme === 'dark';
+          button.setAttribute('aria-pressed', String(dark));
+          button.setAttribute('aria-label', dark
+            ? (hindi ? 'लाइट थीम चालू करें' : 'Switch to light theme')
+            : (hindi ? 'डार्क थीम चालू करें' : 'Switch to dark theme'));
+          label.textContent = dark
+            ? (hindi ? 'लाइट मोड' : 'Light mode')
+            : (hindi ? 'डार्क मोड' : 'Dark mode');
+        };
+        applyTheme(document.documentElement.dataset.theme || 'light');
+        button.addEventListener('click', () => {
+          const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          applyTheme(next);
+          try { localStorage.setItem('sd-theme', next); } catch {}
+        });
+      })();
+    </script>
   </body>
 </html>
