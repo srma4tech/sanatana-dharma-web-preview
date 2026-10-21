@@ -15,7 +15,7 @@ function fixture() {
     status: 'published',
     editorial: {
       reviewStatus: 'approved-for-publication',
-      publisherApproval: { approved: true }
+      publisherApproval: { approved: true, approvedBy: 'editorial-owner', approvedOn: '2026-10-18T00:00:00.000Z' }
     },
     sources: [{ sourceId: 'source-1', claimClass: 'traditional-belief', locator: 'Chapter 1', verificationStatus: 'verified', claimSummary: 'Test claim', verifiedBy: 'reviewer-1', verifiedOn: '2026-10-18' }],
     locales: {
