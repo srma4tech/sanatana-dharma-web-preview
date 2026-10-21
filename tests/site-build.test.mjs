@@ -46,6 +46,10 @@ test('build exposes bilingual review routes with explicit draft status before pu
       assert.match(html, /review-banner/i);
       assert.match(html, /Review draft|समीक्षा प्रारूप/);
       assert.match(html, /Sources &amp; verification status|स्रोत और सत्यापन स्थिति/);
+      if (slug === 'shiva-iconography-symbols') {
+        assert.match(html, /collectionapi\.metmuseum\.org\/api\/collection\/v1\/iiif\/39328\/154124\/main-image/);
+        assert.match(html, /metmuseum\.org\/art\/collection\/search\/39328/);
+      }
     }
   }
 });
